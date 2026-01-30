@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "TouchControlls",
+    "maps": [
+        {
+            "name": "Touch",
+            "id": "18e62e5c-c647-48f4-bbd6-f16a35df6f29",
+            "actions": [
+                {
+                    "name": "TouchInput",
+                    "type": "PassThrough",
+                    "id": "569d12ba-1bda-4f23-a315-bc5d5f919978",
+                    "expectedControlType": "Touch",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fe5c2693-e946-4e52-a60c-d452ac44572f",
+                    "path": "<Touchscreen>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
