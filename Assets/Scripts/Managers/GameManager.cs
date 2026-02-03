@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     
     public float maxHp;
     [HideInInspector] public float currentHp;
-    [HideInInspector] public int currentResources;
+    public int currentResources;
     [HideInInspector] public int evolutionPoints;
     [HideInInspector] public Bunker bunker;
     private float gameSpeed = 1.0f;

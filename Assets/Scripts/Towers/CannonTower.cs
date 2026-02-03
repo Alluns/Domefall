@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Towers
@@ -8,8 +6,8 @@ namespace Towers
     public class GroundTower : Tower
     {
         public TrailRenderer trail;
-        private List<ParticleSystem> muzzleFlashes = new();
-        private int currentBarrel;
+        // private List<ParticleSystem> muzzleFlashes = new();
+        // private int currentBarrel;
 
         // private Transform body, barrel;
         
@@ -18,7 +16,7 @@ namespace Towers
             // body = transform.Find("Tier1/Base/Body");
             // barrel = transform.Find("Tier1/Base/Body/Barrel");
 
-            muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
+            // muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
         }
 
         protected override void Update()
@@ -41,17 +39,17 @@ namespace Towers
         {
             if (!targetEnemy) return false;
 
-            if (Vector3.Distance(targetEnemy.transform.position, transform.position) > range)
+            if (Vector3.Distance(targetEnemy.transform.position, transform.position) > stats.range)
             {
                 targetEnemy = null;
                 return false;
             }
 
-            StartCoroutine(TrailAnimation(Instantiate(trail, muzzleFlashes[0].transform.position, Quaternion.identity), targetEnemy.transform.position));
-            muzzleFlashes[currentBarrel].Play();
-            currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
+            // StartCoroutine(TrailAnimation(Instantiate(trail, muzzleFlashes[0].transform.position, Quaternion.identity), targetEnemy.transform.position));
+            // muzzleFlashes[currentBarrel].Play();
+            // currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
             
-            targetEnemy.TakeDamage(damage);
+            targetEnemy.TakeDamage(stats.damage);
             
             return true;
         }
@@ -62,8 +60,9 @@ namespace Towers
             
             // body = transform.Find($"{model[level].name}/Base/Body");
             // barrel = transform.Find($"{model[level].name}/Base/Body/Barrel");
-            
-            muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
+
+            // currentBarrel = 0;
+            // muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
         }
 
         private IEnumerator TrailAnimation(TrailRenderer trail, Vector3 target)

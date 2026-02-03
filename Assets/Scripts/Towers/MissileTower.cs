@@ -6,12 +6,12 @@ namespace Towers
 {
     public class MissileTurret : Tower
     {
-        private List<ParticleSystem> muzzleFlashes = new();
-        private int currentBarrel;
+        // private List<ParticleSystem> muzzleFlashes = new();
+        // private int currentBarrel;
         
         private void Start()
         {
-            muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
+            // muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
         }
         
         protected override void Update()
@@ -25,16 +25,16 @@ namespace Towers
         {
             if (!targetEnemy) return false;
 
-            if (Vector3.Distance(targetEnemy.transform.position, transform.position) > range)
+            if (Vector3.Distance(targetEnemy.transform.position, transform.position) > stats.range)
             {
                 targetEnemy = null;
                 return false;
             }
             
-            muzzleFlashes[currentBarrel].Play();
-            currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
+            // muzzleFlashes[currentBarrel].Play();
+            // currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
             
-            targetEnemy.TakeDamage(damage);
+            targetEnemy.TakeDamage(stats.damage);
             
             return true;
         }
@@ -43,8 +43,8 @@ namespace Towers
         {
             base.Upgrade();
             
-            currentBarrel = 0;
-            muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
+            // currentBarrel = 0;
+            // muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
         }
     }
 }

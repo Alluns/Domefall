@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,16 +9,18 @@ public class Enemy : MonoBehaviour
     public float dmg;
     public int resourcesGranted;
     public float distanceToShelter;
-    
+
     private NavMeshAgent navMeshAgent;
+    private ParticleSystem dmgParticles;
     private GameObject shelter;
     private float currentHp;
-    
+
     void Start()
     {
         currentHp = maxHp;
         shelter = GameObject.FindGameObjectWithTag("Shelter");
         navMeshAgent = GetComponent<NavMeshAgent>();
+        dmgParticles = GetComponentInChildren<ParticleSystem>();
         navMeshAgent.speed = moveSpeed;
         navMeshAgent.acceleration = moveSpeed;
     }
@@ -48,6 +51,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
+        dmgParticles.Play();
         currentHp -= dmg;
         if (currentHp <= 0)
         {
@@ -58,12 +62,14 @@ public class Enemy : MonoBehaviour
     private void AtShelter()
     {
         shelter.GetComponent<Bunker>().TakeDmg(dmg);
+        EnemyManager.Instance.enemiesAlive--;
         Destroy(gameObject);
     }
 
     private void Death()
     {
         GameManager.Instance.GetResource(resourcesGranted);
+        EnemyManager.Instance.enemiesAlive--;
         Destroy(gameObject);
     }
 }

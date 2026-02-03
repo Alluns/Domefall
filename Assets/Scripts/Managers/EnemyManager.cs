@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,20 +10,44 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager Instance;
 
     private GameObject shelter;
-    private GameObject enemyPrefab;
-    public List<GameObject> enemyPrefabs;
     public List<SpawnPosition> spawnPositions;
+    public List<Wave> waves;
 
-    [SerializeField] private int enemyCount = 4, waveNumber;
-    [SerializeField] private float waveDuration, waveInterval;
-    private float waveIntervalTimer;
-    private bool waveOngoing;
+    private int waveNumber;
+    private float spawnTimer;
+    private float waveTimer;
+    private Wave currentWave;
+
+    [HideInInspector]public int enemiesAlive;
 
     [System.Serializable]
     public class SpawnPosition
     {
         public Vector3 position;
         public NavMeshPath path;
+        [HideInInspector] public List<EnemyGroup> groups;
+        
+    }
+
+    [System.Serializable]
+    public class Wave
+    {
+        public List<EnemyGroup> enemyGroups;
+        public float spawnInterval;
+        public float waitForNextWave;
+        [HideInInspector]public int spawnCount;
+        [HideInInspector]public int spawnQuota;
+    }
+
+    [System.Serializable]
+    public class EnemyGroup
+    {
+        public int minEnemyCount;
+        public int maxEnemyCount;
+        [HideInInspector] public int enemyCount;
+        public GameObject enemyPrefab;
+        public int spawnPosition;
+        [HideInInspector]public int spawnCount;
     }
 
     private void Awake()
@@ -39,26 +63,30 @@ public class EnemyManager : MonoBehaviour
     {
         shelter = GameObject.FindGameObjectWithTag("Shelter");
         CalculatePaths();
+        StartNextWave();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (!waveOngoing && waveNumber > 5)
+        
+        if (currentWave.spawnCount < currentWave.spawnQuota)
         {
-            GameManager.Instance.SwitchState(GameManager.GameState.Win);
-        }
-        if (waveIntervalTimer <= 0)
-        {
-            if (!waveOngoing)
+            spawnTimer -= Time.deltaTime;
+            if (spawnTimer <= 0)
             {
-                enemyCount = CalcEnemyCount();
-                StartCoroutine(SpawnEnemies());
-                waveNumber++;
-
+                spawnTimer = currentWave.spawnInterval;
+                SpawnEnemy();
             }
         }
-        else
-            waveIntervalTimer -= Time.fixedDeltaTime;
+        else if (waveNumber < waves.Count)
+        {
+            waveTimer -= Time.deltaTime;
+            if (waveTimer <= 0)
+            {
+                StartNextWave();
+            }
+        }
+        else if (enemiesAlive == 0) GameManager.Instance.SwitchState(GameManager.GameState.Win);
     }
     private void CalculatePaths()
     {
@@ -70,43 +98,74 @@ public class EnemyManager : MonoBehaviour
             spawnPosition.path = path;
         }
     }
-    int CalcEnemyCount()
-    {
-        return enemyCount + waveNumber;
-
-    }
-    IEnumerator SpawnEnemies()
-    {
-        float interval = waveDuration / enemyCount;
-
-        waveOngoing = true;
-
-        for (int i = 0; i < enemyCount; ++i)
-        {
-            DecideNextEnemyType();
-            SpawnEnemy();
-            yield return new WaitForSeconds(interval);
-        }
-        waveIntervalTimer = waveInterval;
-        waveOngoing = false;
-    }
 
     private void SpawnEnemy()
     {
-        SpawnPosition spawnPos = spawnPositions[Random.Range(0, spawnPositions.Count)];
-
-        GameObject newEnemy = Instantiate(enemyPrefab, spawnPos.position, Quaternion.identity, transform);
-        NavMeshAgent enemyMeshAgent =  newEnemy.AddComponent<NavMeshAgent>();
-        if (enemyMeshAgent.isOnNavMesh)
+        foreach (SpawnPosition spawn in spawnPositions)
         {
-            enemyMeshAgent.path = spawnPos.path;
-            enemyMeshAgent.autoRepath = false;
+            foreach(EnemyGroup enemyGroup in spawn.groups)
+            {
+                if (enemyGroup.spawnCount < enemyGroup.enemyCount)
+                {
+                    GameObject newEnemy = Instantiate(enemyGroup.enemyPrefab, spawn.position, Quaternion.identity, transform);
+                    enemiesAlive++;
+                    currentWave.spawnCount++;
+                    enemyGroup.spawnCount++;
+
+                    NavMeshAgent enemyMeshAgent = newEnemy.AddComponent<NavMeshAgent>();
+                    if (enemyMeshAgent.isOnNavMesh)
+                    {
+                        enemyMeshAgent.path = spawn.path;
+                        enemyMeshAgent.autoRepath = false;
+                    }
+                }
+            }
+        }
+    }
+    private void CalculateSpawnQuota()
+    {
+        int spawnQuota = 0;
+        foreach (EnemyGroup enemyGroup in currentWave.enemyGroups)
+        {
+            spawnQuota += enemyGroup.enemyCount;
+        }
+        currentWave.spawnQuota = spawnQuota;
+    }
+
+    private void AssignEnemyGroups()
+    {
+        foreach(SpawnPosition spawn in spawnPositions)
+        {
+            spawn.groups.Clear();
+        }
+        foreach(EnemyGroup enemyGroup in currentWave.enemyGroups)
+        {
+            int spawnPoint = Mathf.Min(enemyGroup.spawnPosition, spawnPositions.Count-1);
+            if (spawnPoint < 0)
+            {
+                spawnPoint = Random.Range(0, spawnPositions.Count);
+            }
+            spawnPositions[spawnPoint].groups.Add(enemyGroup);
         }
     }
 
-    private void DecideNextEnemyType()
+    private void DecideEnemyCounts()
     {
-        enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+        foreach (EnemyGroup enemyGroup in currentWave.enemyGroups)
+        {
+            enemyGroup.enemyCount = Random.Range(enemyGroup.minEnemyCount, enemyGroup.maxEnemyCount + 1);
+        }
+    }
+
+
+    private void StartNextWave()
+    {
+        currentWave = waves[waveNumber];
+        DecideEnemyCounts();
+        CalculateSpawnQuota();
+        AssignEnemyGroups();
+        waveTimer = currentWave.waitForNextWave;
+        waveNumber++;
     }
 
     private void OnDrawGizmos()

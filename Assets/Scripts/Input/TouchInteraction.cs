@@ -1,20 +1,29 @@
+using UnityEngine.InputSystem.LowLevel;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
+using UnityEngine;
+using System;
 
 namespace Input
 {
     public class TouchInteraction : MonoBehaviour
     {
-        private InputAction tapAction;
+        public static TouchInteraction Instance;
 
-        private GameObject selectedObject;
+        public GameObject selectedObject;
+        
+        private InputAction tapAction;
         private Ray ray;
     
         private void Awake()
         {
+            if(Instance != null && Instance != this)
+            {
+                throw new Exception("2 singleton of the same [TouchInteraction exist]");
+            }
+            Instance = this;
+            
             tapAction = InputSystem.actions.FindAction("TouchInput");
         }
 
@@ -61,16 +70,16 @@ namespace Input
             ray = Camera.main.ScreenPointToRay(pressedPixel);
 
             if (!Physics.Raycast(ray, out RaycastHit hit)) return;
-            
-            hit.collider.gameObject.GetComponent<IClickable>()?.Clicked();
 
-            if (selectedObject == hit.collider.gameObject) return;
-        
-            selectedObject?.GetComponent<IClickable>()?.DeSelected();
-        
+            if (selectedObject != null && selectedObject != hit.collider.gameObject)
+            {
+                selectedObject?.GetComponent<IClickable>()?.DeSelected();
+                hit.collider.gameObject.GetComponent<IClickable>()?.Selected();
+            }
+            
             selectedObject = hit.collider.gameObject;
-        
-            selectedObject.GetComponent<IClickable>()?.Selected();
+            
+            selectedObject.GetComponent<IClickable>()?.Clicked();
         }
 
         private void OnDrawGizmos()

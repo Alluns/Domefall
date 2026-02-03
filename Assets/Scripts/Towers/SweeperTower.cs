@@ -1,12 +1,10 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Towers
 {
     public class SweeperTower : Tower
     {
-        private List<ParticleSystem> muzzleFlashes = new();
+        // private List<ParticleSystem> muzzleFlashes = new();
         private int currentBarrel;
         
         //private Transform turret, breech;
@@ -16,7 +14,7 @@ namespace Towers
             //turret = transform.Find($"{model[level].name}/Base");
             //breech = turret.transform.Find("Breech");
             
-            muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
+            // muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
         }
 
         protected override void Update()
@@ -39,16 +37,16 @@ namespace Towers
         {
             if (!targetEnemy) return false;
 
-            if (Vector3.Distance(targetEnemy.transform.position, transform.position) > range)
+            if (Vector3.Distance(targetEnemy.transform.position, transform.position) > stats.range)
             {
                 targetEnemy = null;
                 return false;
             }
             
-            muzzleFlashes[currentBarrel].Play();
-            currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
+            // currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
+            // muzzleFlashes[currentBarrel].Play();
             
-            targetEnemy.TakeDamage(damage);
+            targetEnemy.TakeDamage(stats.damage);
             
             return true;
         }
@@ -60,7 +58,8 @@ namespace Towers
             //turret = transform.Find($"{model[level].name}/Base");
             //breech = turret.transform.Find("Breech");
             
-            muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
+            // currentBarrel = 0;
+            // muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
         }
     }
 }

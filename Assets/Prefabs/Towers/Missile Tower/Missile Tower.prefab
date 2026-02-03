@@ -67,19 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a598bf3f4e32274980536ec57abbf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Towers.MissileTurret
-  damage: 100
-  attackSpeed: 1
-  range: 45
-  viableTargets:
-    serializedVersion: 2
-    m_Bits: 256
-  upgradeCost: 60
-  upgradeCostScaling: 1.25
-  rotationSpeed: 0
-  model:
-  - {fileID: 5314314775929593542, guid: a0ae39058a1771445a09934d7e35d17e, type: 3}
-  - {fileID: 592948104232952480, guid: fc595699110d2804b841a2844ab08280, type: 3}
-  - {fileID: 4747164531194253411, guid: e10a8ba2736e3314f9f80236d6617f36, type: 3}
+  towerStats: {fileID: 11400000, guid: 449f82b3a1cff434881efbccaa876e5a, type: 2}
   displayRange: 0
   displayAim: 0
 --- !u!1001 &4836929187632825992

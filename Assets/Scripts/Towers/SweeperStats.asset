@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee7dbb2d7a1cc246bfafeeb8ff33792, type: 3}
+  m_Name: SweeperStats
+  m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.TowerStats
+  health: 200
+  regeneration: 7.5
+  armor: 40
+  damage: 40
+  criticalHitDamageMultiplier: 2
+  criticalHitChance: 0
+  attackSpeed: 1
+  range: 75
+  areaOfEffect: 0
+  rotationSpeed: 0
+  viableTargets:
+    serializedVersion: 2
+    m_Bits: 384
+  knockBack: 0
+  pierce: 0
+  ricochet: 0
+  projectilePierce: 0
+  extraProjectiles: 0
+  additionalProjectile: 0
+  resourcesMultiplier: 1
+  upgradeCost: 200
+  upgradeCostScaling: 2
+  upgradePool:
+  - {fileID: 11400000, guid: a5a5d01ea9618c64ea9b9ffe8976d11f, type: 2}
+  - {fileID: 11400000, guid: e01229b7137bdc74ca21e905dac1a98a, type: 2}
+  - {fileID: 11400000, guid: fcb65701159f13346a1d936c37ae713e, type: 2}
+  - {fileID: 11400000, guid: b99c32a92da214642b59390fe4b6296e, type: 2}
+  - {fileID: 11400000, guid: 0b99b852d105bb8419c34814480e3c32, type: 2}
+  - {fileID: 11400000, guid: c3076566899d74547b42142e501529cd, type: 2}
+  model:
+  - {fileID: 3465668703900256041, guid: 5a871098af20c0845b48abfb72a54f75, type: 3}
+  - {fileID: 3859750222325160072, guid: 39ae6c54b2f0cce4ca149d25afa7670b, type: 3}
+  - {fileID: 8172521507664582915, guid: d0acfea3ac278e04ea0a2b60283037a3, type: 3}
