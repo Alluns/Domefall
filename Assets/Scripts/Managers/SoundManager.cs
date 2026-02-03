@@ -29,12 +29,11 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-       // UpdateLevel01();
         AudioManager.Instance.PlayOneShot(AudioManager.Instance.Mlevel01, transform.position);
     }
     private void FixedUpdate()
     {
-        //UpdateSound();
+        //UpdateSound01();
         //InitializeMusic(Music);
     }
 
