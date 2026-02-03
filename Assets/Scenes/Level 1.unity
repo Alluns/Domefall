@@ -2573,6 +2573,87 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3919278843704819046, guid: 8136bf83e5851c844bcf18d729abf9ce, type: 3}
   m_PrefabInstance: {fileID: 170190158644764411}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &222855688012626744
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4908184792590576733, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908184792590576733, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908184792590576733, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5357965011297366687, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: m_Name
+      value: EnemyDead
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972954111995346863, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.11347455
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972954111995346863, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.11347455
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972954111995346863, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.3207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151362356950662256, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151362356950662256, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151362356950662256, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151362356950662256, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151362356950662256, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151362356950662256, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151362356950662256, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151362356950662256, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151362356950662256, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151362356950662256, guid: df1cf683927433f4f9d1706577070378, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df1cf683927433f4f9d1706577070378, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2584,3 +2665,4 @@ SceneRoots:
   - {fileID: 1083293316}
   - {fileID: 121948909}
   - {fileID: 1818610980}
+  - {fileID: 222855688012626744}
