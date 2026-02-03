@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -26,6 +26,7 @@ public class EnemyManager : MonoBehaviour
         public Vector3 position;
         public NavMeshPath path;
         [HideInInspector] public List<EnemyGroup> groups;
+        
     }
 
     [System.Serializable]
@@ -41,7 +42,9 @@ public class EnemyManager : MonoBehaviour
     [System.Serializable]
     public class EnemyGroup
     {
-        public int enemyCount;
+        public int minEnemyCount;
+        public int maxEnemyCount;
+        [HideInInspector] public int enemyCount;
         public GameObject enemyPrefab;
         public int spawnPosition;
         [HideInInspector]public int spawnCount;
@@ -146,9 +149,19 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
+    private void DecideEnemyCounts()
+    {
+        foreach (EnemyGroup enemyGroup in currentWave.enemyGroups)
+        {
+            enemyGroup.enemyCount = Random.Range(enemyGroup.minEnemyCount, enemyGroup.maxEnemyCount + 1);
+        }
+    }
+
+
     private void StartNextWave()
     {
         currentWave = waves[waveNumber];
+        DecideEnemyCounts();
         CalculateSpawnQuota();
         AssignEnemyGroups();
         waveTimer = currentWave.waitForNextWave;

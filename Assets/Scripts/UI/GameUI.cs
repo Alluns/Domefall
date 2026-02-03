@@ -1,11 +1,10 @@
-using Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
 {
-    public class GameUI : MonoBehaviour, IMenu
+    public class GameUI : MonoBehaviour
     {
         private TMP_Text resourceText, versionText;
         private GameObject loseImage, winImage;

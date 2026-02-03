@@ -25,6 +25,7 @@ namespace UI
 
             if (tower) tower.AddUpgrade(upgrade);
 
+            GameManager.Instance.SwitchState(GameManager.GameState.Playing);
             UIManager.Instance.CloseLastUI();
         }
     }

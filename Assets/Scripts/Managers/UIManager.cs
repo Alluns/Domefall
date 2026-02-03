@@ -5,8 +5,6 @@ using UnityEngine;
 
 namespace Managers
 {
-    public interface IMenu {}
-    
     public class UIManager : MonoBehaviour
     {
         public static UIManager Instance;
@@ -27,8 +25,12 @@ namespace Managers
             switch (menu)
             {
                 case Menus.UpgradeMenu:
-                    transform.Find("Upgrade Menu").GetComponent<UpgradePickerUI>().gameObject.SetActive(true);
+                    transform.Find("Upgrade Menu").gameObject.SetActive(true);
                     menus.Push(transform.Find("Upgrade Menu").gameObject);
+                    break;
+                case Menus.TowerSelectionMenu:
+                    transform.Find("Tower Selection").gameObject.SetActive(true);
+                    menus.Push(transform.Find("Tower Selection").gameObject);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(menu), menu, null);
@@ -44,5 +46,6 @@ namespace Managers
     public enum Menus
     {
         UpgradeMenu,
+        TowerSelectionMenu
     }
 }

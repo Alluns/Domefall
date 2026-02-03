@@ -757,6 +757,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 541888539}
     m_Modifications:
+    - target: {fileID: 2374730546866767936, guid: e279806237c02d746a2ad5148b830d52, type: 3}
+      propertyPath: m_Name
+      value: Version text
+      objectReference: {fileID: 0}
     - target: {fileID: 3395729679019462879, guid: e279806237c02d746a2ad5148b830d52, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -892,6 +896,11 @@ PrefabInstance:
     - target: {fileID: 6025986764152106310, guid: e279806237c02d746a2ad5148b830d52, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796390950893048043, guid: e279806237c02d746a2ad5148b830d52, type: 3}
+      propertyPath: m_text
+      value: You are playing a beta version of the game. Features may be incomplete
+        and may change in the future.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

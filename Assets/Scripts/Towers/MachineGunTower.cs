@@ -1,17 +1,16 @@
-using System.Collections.Generic;
-using System.Linq;
+using Managers;
 using UnityEngine;
 
 namespace Towers
 {
     public class MachineGunTower : Tower
     {
-        private List<ParticleSystem> muzzleFlashes = new();
+        // private List<ParticleSystem> muzzleFlashes = new();
         private int currentBarrel;
 
         private void Start()
         {
-            muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
+            // muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
         }
         
         protected override void Update()
@@ -40,8 +39,8 @@ namespace Towers
                 return false;
             }
             
-            muzzleFlashes[currentBarrel].Play();
-            currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
+            // muzzleFlashes[currentBarrel]?.Play();
+            // currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
             
             targetEnemy.TakeDamage(stats.damage);
             
@@ -50,12 +49,20 @@ namespace Towers
         
         protected override void Upgrade()
         {
+            if (level == 1)
+            {
+                UIManager.Instance.OpenUI(Menus.TowerSelectionMenu);
+                GameManager.Instance.SwitchState(GameManager.GameState.Upgrade);
+                return;
+            }
+            
             base.Upgrade();
             
             // body = transform.Find($"{model[level].name}/Base/Body");
             // barrel = transform.Find($"{model[level].name}/Base/Body/Barrel");
             
-            muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
+            // currentBarrel = 0;
+            // muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
         }
     }
 }

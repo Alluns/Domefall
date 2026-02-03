@@ -1,9 +1,9 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using Managers;
 using ScriptableObjects;
 using UnityEngine;
+using System.Linq;
+using Managers;
+using System;
 
 namespace Towers
 {
@@ -19,14 +19,24 @@ namespace Towers
 #endif
 
         protected List<TowerUpgrade> upgrades = new();
+
+        public List<TowerUpgrade> Upgrades
+        {
+            get => upgrades;
+        }
+
         protected Enemy targetEnemy;
-        
-        private int level;
-        private float attackCooldown;
+        protected int level;
+        protected float attackCooldown;
 
         private void Awake()
         {
             stats = Instantiate(towerStats);
+        }
+
+        private void Start()
+        {
+            ApplyAllUpgrades();
         }
 
         protected virtual void Update()
@@ -45,19 +55,22 @@ namespace Towers
 
         protected virtual void Upgrade()
         {
-            UIManager.Instance.OpenUI(Menus.UpgradeMenu);
-            GameManager.Instance.SwitchState(GameManager.GameState.Upgrade);
-            
-            if (level >= stats.model.Length - 1) return;
-            
             level++;
             
-            Destroy(transform.GetChild(0).gameObject);
+            UIManager.Instance.OpenUI(Menus.UpgradeMenu);
+            GameManager.Instance.SwitchState(GameManager.GameState.Upgrade);
+
+            if (level < stats.model.Length)
+            {
+                Destroy(transform.GetChild(0).gameObject);
             
-            Instantiate(stats.model[level], transform).name = stats.model[level].name;
+                Instantiate(stats.model[level], transform).name = stats.model[level].name;
+            }
+            
+            
         }
 
-        public void AddUpgrade(TowerUpgrade upgrade)
+        public virtual void AddUpgrade(TowerUpgrade upgrade)
         {
             upgrades.Add(upgrade);
             ApplyAllUpgrades();
