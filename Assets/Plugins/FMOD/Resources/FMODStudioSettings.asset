@@ -466,7 +466,7 @@ MonoBehaviour:
   sourceProjectPath: Assets/Fmod/FmodBank/FmodBank.fspro
   sourceBankPath: Assets/Fmod/FmodBank/Build
   sourceBankPathUnformatted: 
-  BankRefreshCooldown: 5
+  BankRefreshCooldown: 1
   ShowBankRefreshWindow: 1
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -488,8 +488,7 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
-  Banks:
-  - Music
+  Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
