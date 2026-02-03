@@ -1,78 +1,46 @@
-using TMPro;
-using Towers;
-using UnityEngine;
-using UnityEngine.UI;
+using Random = UnityEngine.Random;
 using System.Collections.Generic;
+using ScriptableObjects;
+using UnityEngine;
+using Towers;
+using Input;
 
 namespace UI
 {
     public class UpgradePickerUI : MonoBehaviour
     {
-        public static UpgradePickerUI Instance;
-
-        public Tower selectedTower;
-        private List<UpgradePool.Upgrade> randomUpgrades;
-        private Button[] upgrades;
-        UpgradePool pool;
-        private string[] cheating = new[]
-        {
-            "+10 damage",
-            "+3 range",
-            "+1 attack speed"
-        };
+        public GameObject upgradeButton;
         
-        private void Awake()
-        {
-            if(Instance != null && Instance != this)
-            {
-                throw new System.Exception("2 singleton of the same [GamesManager exist]");
-            }
-            Instance = this;
-            upgrades = GetComponentsInChildren<Button>();
-            pool = GetComponent<UpgradePool>();
-            gameObject.SetActive(false);
-        }
-
+        private const int UpgradeCount = 3;
+        
         private void OnEnable()
         {
-            // Get random upgrades
-            randomUpgrades = pool.GetRandomUpgrades(upgrades.Length);
-            Debug.Log(upgrades.Length);
-            Debug.Log(randomUpgrades.Count);
-            for (int i = 0; i < randomUpgrades.Count; i++)
-            {
-                Debug.Log(i);
-                upgrades[i].onClick.RemoveAllListeners();
-                upgrades[i].onClick.AddListener(UpgradeButtonClicked);
-                upgrades[i].GetComponentInChildren<TMP_Text>().text = $"+{randomUpgrades[i].upgradeAmount} {randomUpgrades[i].stat}";
-                int capturedIndex = i;
-                upgrades[i].onClick.AddListener(() => UpgradeTower(selectedTower, randomUpgrades[capturedIndex]));
-            }
-
+            GenerateUpgrades(TouchInteraction.Instance.selectedObject.GetComponent<Tower>().towerStats.upgradePool);
         }
 
-        private void UpgradeButtonClicked()
+        private void OnDisable()
         {
-
-            gameObject.SetActive(false);
+            foreach (Transform child in transform.GetChild(0))
+            {
+                Destroy(child.gameObject);
+            }
         }
 
-        public void UpgradeTower(Tower tower, UpgradePool.Upgrade upgrade)
+        private void GenerateUpgrades(List<TowerUpgrade> upgrades)
         {
-            //Change later !!!
-            if (upgrade.stat == UpgradePool.Upgrade.StatTypes.dmg)
+            List<TowerUpgrade> tempUpgrades = new (upgrades);
+            
+            for (int i = 0; i < UpgradeCount; i++)
             {
-                tower.damage += upgrade.upgradeAmount;
-            }
-            else if (upgrade.stat == UpgradePool.Upgrade.StatTypes.range)
-            {
-                tower.range += upgrade.upgradeAmount;
-            }
-            else if (upgrade.stat == UpgradePool.Upgrade.StatTypes.attackSpeed)
-            {
-                tower.attackSpeed += upgrade.upgradeAmount;
+                if (tempUpgrades.Count == 0) break;
+
+                GameObject button = Instantiate(upgradeButton, transform.Find("Upgrades"));
+                TowerUpgrade randomUpgrade = tempUpgrades[Random.Range(0, tempUpgrades.Count)];
+                
+                button.GetComponent<UpgradeButton>().upgrade = randomUpgrade;
+                
+                tempUpgrades.Remove(randomUpgrade);
             }
         }
-
     }
 }

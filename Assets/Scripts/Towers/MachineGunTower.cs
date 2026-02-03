@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Towers
 {
-    public class MissileTurret : Tower
+    public class MachineGunTower : Tower
     {
         private List<ParticleSystem> muzzleFlashes = new();
         private int currentBarrel;
-        
+
         private void Start()
         {
             muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
@@ -17,8 +17,17 @@ namespace Towers
         protected override void Update()
         {
             base.Update();
-            
+
             if (!targetEnemy) targetEnemy = FindTarget();
+
+            if (!targetEnemy) return;
+
+            // Rotation shenanigans
+            // TODO: When the local rotations have been fixed by the artists the body / barrel then rotate them instead
+            Quaternion rotation = Quaternion.LookRotation(targetEnemy.transform.position - transform.position);
+            Quaternion bodyRotation = Quaternion.Euler(0, rotation.eulerAngles.y, 0);
+            
+            transform.rotation = Quaternion.Slerp(transform.rotation, bodyRotation, Time.deltaTime * 5f);
         }
 
         protected override bool Attack()
@@ -38,12 +47,14 @@ namespace Towers
             
             return true;
         }
-
+        
         protected override void Upgrade()
         {
             base.Upgrade();
             
-            currentBarrel = 0;
+            // body = transform.Find($"{model[level].name}/Base/Body");
+            // barrel = transform.Find($"{model[level].name}/Base/Body/Barrel");
+            
             muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
         }
     }

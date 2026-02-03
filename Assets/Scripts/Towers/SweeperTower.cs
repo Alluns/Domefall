@@ -39,7 +39,7 @@ namespace Towers
         {
             if (!targetEnemy) return false;
 
-            if (Vector3.Distance(targetEnemy.transform.position, transform.position) > range)
+            if (Vector3.Distance(targetEnemy.transform.position, transform.position) > stats.range)
             {
                 targetEnemy = null;
                 return false;
@@ -48,7 +48,7 @@ namespace Towers
             muzzleFlashes[currentBarrel].Play();
             currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
             
-            targetEnemy.TakeDamage(damage);
+            targetEnemy.TakeDamage(stats.damage);
             
             return true;
         }

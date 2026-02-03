@@ -58,12 +58,14 @@ public class Enemy : MonoBehaviour
     private void AtShelter()
     {
         shelter.GetComponent<Bunker>().TakeDmg(dmg);
+        EnemyManager.Instance.enemiesAlive--;
         Destroy(gameObject);
     }
 
     private void Death()
     {
         GameManager.Instance.GetResource(resourcesGranted);
+        EnemyManager.Instance.enemiesAlive--;
         Destroy(gameObject);
     }
 }

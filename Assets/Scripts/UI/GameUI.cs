@@ -1,47 +1,50 @@
+using Managers;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameUI : MonoBehaviour
+namespace UI
 {
-    private TMP_Text resourceText, versionText;
-    private GameObject loseImage, winImage;
-    private Image heatBar;
-    private void Start()
+    public class GameUI : MonoBehaviour, IMenu
     {
-        resourceText = transform.Find("Resource Text").GetComponent<TMP_Text>();
-        versionText = transform.Find("Version Text").GetComponent<TMP_Text>();
-
-        loseImage = transform.Find("Lose Image").gameObject;
-        loseImage.gameObject.SetActive(false);
-        winImage = transform.Find("Victory Image").gameObject;
-        winImage.gameObject.SetActive(false);
-
-        heatBar = transform.Find("HeatBar").GetComponent<Image>();
-
-        versionText.text = $"Project {Application.productName} version: {Application.version}";
-        
-        GameManager.Instance.onGameStateChanged += OnGameStateChanged;
-    }
-
-    private void OnGameStateChanged(GameManager.GameState gameState)
-    {
-        switch (gameState)
+        private TMP_Text resourceText, versionText;
+        private GameObject loseImage, winImage;
+        private Image heatBar;
+        private void Start()
         {
-            case GameManager.GameState.Lose:
-                loseImage.SetActive(true);
-                break;
-            case GameManager.GameState.Win:
-                winImage.SetActive(true);
-                break;
-        }
-    }
+            resourceText = transform.Find("Resource Text").GetComponent<TMP_Text>();
+            versionText = transform.Find("Version Text").GetComponent<TMP_Text>();
 
-    private void Update()
-    {
-        resourceText.text = $"Resources: {GameManager.Instance.currentResources}" +
-                            $"\nHealth: {GameManager.Instance.bunker.currentHp}";
-        heatBar.fillAmount = GameManager.Instance.bunker.currentHeat / Mathf.Max(GameManager.Instance.bunker.maxHeat, 1);
+            loseImage = transform.Find("Lose Image").gameObject;
+            loseImage.gameObject.SetActive(false);
+            winImage = transform.Find("Victory Image").gameObject;
+            winImage.gameObject.SetActive(false);
+
+            heatBar = transform.Find("HeatBar").GetComponent<Image>();
+
+            versionText.text = $"Project {Application.productName} version: {Application.version}";
+        
+            GameManager.Instance.onGameStateChanged += OnGameStateChanged;
+        }
+
+        private void OnGameStateChanged(GameManager.GameState gameState)
+        {
+            switch (gameState)
+            {
+                case GameManager.GameState.Lose:
+                    loseImage.SetActive(true);
+                    break;
+                case GameManager.GameState.Win:
+                    winImage.SetActive(true);
+                    break;
+            }
+        }
+
+        private void Update()
+        {
+            resourceText.text = $"Resources: {GameManager.Instance.currentResources}" +
+                                $"\nHealth: {GameManager.Instance.bunker.currentHp}";
+            heatBar.fillAmount = GameManager.Instance.bunker.currentHeat / Mathf.Max(GameManager.Instance.bunker.maxHeat, 1);
+        }
     }
 }
