@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +28,7 @@ public class Jumpa : UpgradeTree
         }
         else
         {
+            
             if (jumpaState == JumpaState.Activatable)
             {
                 foreach (Jumpa jumpa in childJumpa)
@@ -37,6 +39,8 @@ public class Jumpa : UpgradeTree
                 }
                 GameObject.FindGameObjectWithTag("Shelter").GetComponent<Bunker>().evoPoints--;
                 gameObject.GetComponent<Image>().sprite = active;
+                GameManager.Instance.saveData.upgrades.Add(gameObject.name);
+                Debug.Log(GameManager.Instance.saveData.upgrades.ElementAt(0));
             }
             else Debug.Log("Not unlocked yet");
 
