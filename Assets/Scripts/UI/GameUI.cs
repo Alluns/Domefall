@@ -6,14 +6,11 @@ namespace UI
 {
     public class GameUI : MonoBehaviour
     {
-        private TMP_Text resourceText, versionText;
+        [SerializeField] private TMP_Text resourceText, versionText;
         private GameObject loseImage, winImage;
         private Image heatBar;
         private void Start()
         {
-            resourceText = transform.Find("Resource Text").GetComponent<TMP_Text>();
-            versionText = transform.Find("Version Text").GetComponent<TMP_Text>();
-
             loseImage = transform.Find("Lose Image").gameObject;
             loseImage.gameObject.SetActive(false);
             winImage = transform.Find("Victory Image").gameObject;
@@ -41,8 +38,7 @@ namespace UI
 
         private void Update()
         {
-            resourceText.text = $"Resources: {GameManager.Instance.currentResources}" +
-                                $"\nHealth: {GameManager.Instance.bunker.currentHp}";
+            resourceText.text = GameManager.Instance.currentResources.ToString();
             heatBar.fillAmount = GameManager.Instance.bunker.currentHeat / Mathf.Max(GameManager.Instance.bunker.maxHeat, 1);
         }
     }

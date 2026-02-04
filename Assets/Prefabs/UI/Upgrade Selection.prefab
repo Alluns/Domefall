@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9ca4c05d886434140a7cb8efe4c8a9be, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9ca4c05d886434140a7cb8efe4c8a9be, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -309,15 +309,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: +10 damage
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a86d01794313ec1458ed0b82cde84bd9, type: 2}
+  m_sharedMaterial: {fileID: -6922621344092592551, guid: a86d01794313ec1458ed0b82cde84bd9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4293782764
+  m_fontColor: {r: 0.9254902, g: 0.9254902, b: 0.92941177, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -446,15 +446,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: +10 damage
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a86d01794313ec1458ed0b82cde84bd9, type: 2}
+  m_sharedMaterial: {fileID: -6922621344092592551, guid: a86d01794313ec1458ed0b82cde84bd9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4293782764
+  m_fontColor: {r: 0.9254902, g: 0.9254902, b: 0.92941177, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -639,9 +639,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 468657835862557389}
     m_Modifications:
+    - target: {fileID: 658949699119642300, guid: 5858fdae9a19554469ed88566611273a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ca4c05d886434140a7cb8efe4c8a9be, type: 3}
     - target: {fileID: 5201825295642829417, guid: 5858fdae9a19554469ed88566611273a, type: 3}
       propertyPath: m_Name
       value: Upgrade Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761741979525676562, guid: 5858fdae9a19554469ed88566611273a, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.92941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761741979525676562, guid: 5858fdae9a19554469ed88566611273a, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.9254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761741979525676562, guid: 5858fdae9a19554469ed88566611273a, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.9254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761741979525676562, guid: 5858fdae9a19554469ed88566611273a, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4293782764
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761741979525676562, guid: 5858fdae9a19554469ed88566611273a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8830352342800469289, guid: 5858fdae9a19554469ed88566611273a, type: 3}
       propertyPath: m_Pivot.x
