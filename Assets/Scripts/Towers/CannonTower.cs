@@ -9,12 +9,11 @@ namespace Towers
         // private List<ParticleSystem> muzzleFlashes = new();
         // private int currentBarrel;
 
-        // private Transform body, barrel;
-        
+        private Transform body, barrel; 
         private void Start()
         {
-            // body = transform.Find("Tier1/Base/Body");
-            // barrel = transform.Find("Tier1/Base/Body/Barrel");
+            body = transform.Find($"{stats.model[level].name}/Base/Body");
+            barrel = transform.Find($"{stats.model[level].name}/Base/Body/Barrel");
 
             // muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
         }
@@ -32,7 +31,7 @@ namespace Towers
             Quaternion rotation = Quaternion.LookRotation(targetEnemy.transform.position - transform.position);
             Quaternion bodyRotation = Quaternion.Euler(0, rotation.eulerAngles.y, 0);
             
-            transform.rotation = Quaternion.Slerp(transform.rotation, bodyRotation, Time.deltaTime * 5f);
+            body.rotation = Quaternion.Slerp(body.rotation, bodyRotation, Time.deltaTime * 5f);
         }
 
         protected override bool Attack()
@@ -58,8 +57,8 @@ namespace Towers
         {
             base.Upgrade();
             
-            // body = transform.Find($"{model[level].name}/Base/Body");
-            // barrel = transform.Find($"{model[level].name}/Base/Body/Barrel");
+            body = transform.Find($"{stats.model[level].name}/Base/Body");
+            barrel = transform.Find($"{stats.model[level].name}/Base/Body/Barrel");
 
             // currentBarrel = 0;
             // muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();

@@ -2,14 +2,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 
-using static GameManager;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 public class Bunker : MonoBehaviour, IClickable
 {
-    Vector3 extents = new Vector3(2,16,2);
+    private Vector3 extents = new Vector3(2,16,2);
     public int dmg;
     public LayerMask mask;
+    public int evoPoints = 3;
     public float range;
     public float attackSpeed;
     public int armour;
@@ -17,25 +17,33 @@ public class Bunker : MonoBehaviour, IClickable
     public float currentHp;
     public float maxHeat;
     public float currentHeat = 0;
+    
     private float attackCooldown;
-    private Vector3 rayDir;
     private bool selected;
-    private Transform cylinder;
+    
+    private Vector3 aimDirection;
+    private Vector3 rayDir;
+    
+    private Transform turret, barrel;
     private readonly List<ParticleSystem> muzzleFlashes = new();
     private int currentBarrel = 0;
-    private Vector3 aimDirection;
-    public int evoPoints = 3;
+    private GameObject Highlight;
+    private GameObject AimIndicator;
     
     public void Clicked() { }
 
     public void Selected()
     {
         selected = true;
+        Highlight.SetActive(true);
+        AimIndicator.SetActive(true);
     }
 
     public void DeSelected()
     {
         selected = false;
+        Highlight.SetActive(false);
+        AimIndicator.SetActive(false);
     }
     private void OnEnable()
     {
@@ -43,12 +51,18 @@ public class Bunker : MonoBehaviour, IClickable
     }
     private void Start()
     {
-        attackCooldown = 1 / attackSpeed;
-        cylinder = transform.Find("Parent").Find("Body").Find("Cylinder Parent");
+        turret = transform.Find("Bunker/Body/Cylinder/Gunbody");
+        barrel = turret.transform.Find("Gunbarrel");
+        Highlight = GameObject.Find("Highlight");
+        AimIndicator = GameObject.Find("AimIndicator");
         muzzleFlashes.AddRange(gameObject.GetComponentsInChildren<ParticleSystem>());
+        
+        attackCooldown = 1 / attackSpeed;
         currentHp = maxHp;
         GameManager.Instance.maxHp = maxHp;
         GameManager.Instance.currentHp = currentHp;
+        Highlight.SetActive(false);
+        AimIndicator.SetActive(false);
     }
     private void Update()
     {
@@ -56,10 +70,9 @@ public class Bunker : MonoBehaviour, IClickable
         {
             Touch touch = Touch.activeTouches[0];
             Vector2 direction2D = (touch.screenPosition - touch.startScreenPosition).normalized;
-             aimDirection = new Vector3(direction2D.x, 0, direction2D.y);
+            aimDirection = new Vector3(direction2D.x, 0, direction2D.y);
             if (attackCooldown <= 0 && currentHeat < maxHeat)
             {
-
                 ShootInDirection(aimDirection);
                 rayDir = aimDirection;
             }
@@ -92,7 +105,7 @@ public class Bunker : MonoBehaviour, IClickable
         if (direction != Vector3.zero)
         {
             Quaternion targetRot = Quaternion.LookRotation(direction);
-            cylinder.rotation = Quaternion.Slerp(cylinder.rotation, targetRot, Time.deltaTime * 100);
+            turret.rotation = Quaternion.Slerp(turret.rotation, targetRot, Time.deltaTime * 100);
         }
     }
 
@@ -100,7 +113,7 @@ public class Bunker : MonoBehaviour, IClickable
     {
         currentHp -= dmg;
         GameManager.Instance.currentHp = currentHp;
-        if (currentHp <= 0) GameManager.Instance.SwitchState(GameState.Lose);
+        if (currentHp <= 0) GameManager.Instance.SwitchState(GameManager.GameState.Lose);
     }
 
     private void OnDrawGizmos()

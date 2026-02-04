@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public Action<GameState> onGameStateChanged;
-    
+    public SaveData saveData;
     public enum GameState
     {
         Playing,
@@ -15,20 +15,17 @@ public class GameManager : MonoBehaviour
         Upgrade,
         Lose,
         Win,
-        Menu
+        Menu,
+        Evolution
     }
-    
-    public GameState currentState;
-    
-    public float maxHp;
+    public GameState currentState;    public float maxHp;
     [HideInInspector] public float currentHp;
     public int currentResources;
     [HideInInspector] public int evolutionPoints;
     [HideInInspector] public Bunker bunker;
+    [HideInInspector] public JsonSave save;
     private float gameSpeed = 1.0f;
     private readonly List<float> gameSpeeds = new (){ 1.0f, 2.5f, 5.0f };
-
-
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -37,14 +34,13 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
     }
-    
     public void Start()
     {
         SwitchState(GameState.Playing);
         bunker = GameObject.FindGameObjectWithTag("Shelter").GetComponent<Bunker>();
         currentHp = maxHp;
+        save = GameObject.FindGameObjectWithTag("Save").GetComponent<JsonSave>();
     }
-    
     private void Update()
     {
         switch (currentState)
@@ -64,29 +60,30 @@ public class GameManager : MonoBehaviour
             case GameState.Win:
                 Time.timeScale = 0f;
                 evolutionPoints++;
+                save.SaveData();
                 break;
             case GameState.Menu:
                 Time.timeScale = 0f;
                 break;
+            case GameState.Evolution:
+                Time.timeScale = 0f;
+                save.LoadData();
+                break;
         }
     }
-
     public void SwitchState(int iState)
     {
         SwitchState((GameState)iState);
     }
-
     public void SwitchState(GameState aState)
     {
         currentState = aState;
         onGameStateChanged?.Invoke(currentState);
     }
-
     public void GetResource(int resource)
     {
         currentResources += resource;
     }
-
     public void TogglePause()
     {
         switch (currentState)
