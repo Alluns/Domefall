@@ -1,17 +1,20 @@
 using Managers;
+using System.Linq;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace Towers
 {
     public class MachineGunTower : Tower
     {
-        //private List<ParticleSystem> muzzleFlashes = new();
+        private List<ParticleSystem> muzzleFlashes = new();
         private int currentBarrel;
         private Transform gun;
+        private Transform body, barrel;
 
         private void Start()
         {
-            //muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
+            muzzleFlashes = transform.Find(stats.model[level].name).GetComponentsInChildren<ParticleSystem>().ToList();
             gun = transform.Find($"{stats.model[level].name}/Body/Gun");
         }
         
@@ -39,9 +42,8 @@ namespace Towers
                 targetEnemy = null;
                 return false;
             }
-            
-            // muzzleFlashes[currentBarrel]?.Play();
-            // currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
+            muzzleFlashes[currentBarrel].Play();
+            currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
             
             targetEnemy.TakeDamage(stats.damage);
             
@@ -60,11 +62,8 @@ namespace Towers
             base.Upgrade();
 
             gun = transform.Find($"{stats.model[level].name}/Body/Gun");
-            // body = transform.Find($"{model[level].name}/Base/Body");
-            // barrel = transform.Find($"{model[level].name}/Base/Body/Barrel");
-
-            // currentBarrel = 0;
-            // muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
+            currentBarrel = 0;
+            muzzleFlashes = transform.Find(stats.model[level].name).GetComponentsInChildren<ParticleSystem>().ToList();
         }
     }
 }

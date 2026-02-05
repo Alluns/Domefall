@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 
@@ -26,7 +26,6 @@ public class EnemyManager : MonoBehaviour
         public Vector3 position;
         public NavMeshPath path;
         [HideInInspector] public List<EnemyGroup> groups;
-        
     }
 
     [System.Serializable]
@@ -86,7 +85,14 @@ public class EnemyManager : MonoBehaviour
                 StartNextWave();
             }
         }
-        else if (enemiesAlive == 0) GameManager.Instance.SwitchState(GameManager.GameState.Win);
+        else if (enemiesAlive == 0)
+        {
+            GameManager.Instance.saveData.levelsCompleted.Add(SceneManager.GetActiveScene().buildIndex);
+            JsonSave.Save(GameManager.Instance.saveData);
+            GameManager.Instance.SwitchState(GameManager.GameState.Win);
+            
+            gameObject.SetActive(false);
+        }
     }
     private void CalculatePaths()
     {

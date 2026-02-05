@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -34,7 +33,7 @@ public class Enemy : MonoBehaviour
         distanceToShelter = Vector3.Distance(transform.position, shelter.transform.position);
         if(distanceToShelter < 2)
         {
-            AtShelter();
+            AtShelter(); 
         }
     }
 

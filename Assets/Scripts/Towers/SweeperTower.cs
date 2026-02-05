@@ -1,20 +1,22 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Towers
 {
     public class SweeperTower : Tower
     {
-        // private List<ParticleSystem> muzzleFlashes = new();
+        private List<ParticleSystem> muzzleFlashes = new();
         private int currentBarrel;
-        
-        //private Transform turret, breech;
+
+        private Transform turret, breech;
 
         private void Start()
         {
-            //turret = transform.Find($"{model[level].name}/Base");
-            //breech = turret.transform.Find("Breech");
-            
-            // muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
+            turret = transform.Find($"{stats.model[level].name}/Base");
+            breech = turret.transform.Find("Breech");
+
+            muzzleFlashes = transform.Find(stats.model[level].name).GetComponentsInChildren<ParticleSystem>().ToList();
         }
 
         protected override void Update()
@@ -42,10 +44,10 @@ namespace Towers
                 targetEnemy = null;
                 return false;
             }
-            
-            // currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
-            // muzzleFlashes[currentBarrel].Play();
-            
+
+            currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
+            muzzleFlashes[currentBarrel].Play();
+
             targetEnemy.TakeDamage(stats.damage);
             
             return true;
@@ -54,12 +56,12 @@ namespace Towers
         protected override void Upgrade()
         {
             base.Upgrade();
-            
-            //turret = transform.Find($"{model[level].name}/Base");
-            //breech = turret.transform.Find("Breech");
-            
-            // currentBarrel = 0;
-            // muzzleFlashes = GetComponentsInChildren<ParticleSystem>().ToList();
+
+            turret = transform.Find($"{stats.model[level].name}/Base");
+            breech = turret.transform.Find("Breech");
+
+            currentBarrel = 0;
+            muzzleFlashes = transform.Find(stats.model[level].name).GetComponentsInChildren<ParticleSystem>().ToList();
         }
     }
 }

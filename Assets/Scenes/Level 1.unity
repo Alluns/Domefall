@@ -1084,7 +1084,7 @@ MonoBehaviour:
   currentState: 0
   maxHp: 10
   currentHp: 0
-  currentResources: 9999
+  currentResources: 50
   evolutionPoints: 0
   bunker: {fileID: 0}
 --- !u!1 &1309283613
@@ -1656,6 +1656,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1083293316}
     m_Modifications:
     - target: {fileID: 90783548138591493, guid: c511575a199df3740bc9fcfc80bfea49, type: 3}
+      propertyPath: maxHp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 90783548138591493, guid: c511575a199df3740bc9fcfc80bfea49, type: 3}
       propertyPath: mask.m_Bits
       value: 384
       objectReference: {fileID: 0}
@@ -1733,6 +1737,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2091365207541758849, guid: 8136bf83e5851c844bcf18d729abf9ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2184368285782970167, guid: 8136bf83e5851c844bcf18d729abf9ce, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1784,6 +1792,22 @@ PrefabInstance:
     - target: {fileID: 2950234166362568395, guid: 8136bf83e5851c844bcf18d729abf9ce, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402147862517162384, guid: 8136bf83e5851c844bcf18d729abf9ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1145330254}
+    - target: {fileID: 3402147862517162384, guid: 8136bf83e5851c844bcf18d729abf9ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TogglePause
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402147862517162384, guid: 8136bf83e5851c844bcf18d729abf9ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402147862517162384, guid: 8136bf83e5851c844bcf18d729abf9ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3919278843704819046, guid: 8136bf83e5851c844bcf18d729abf9ce, type: 3}
       propertyPath: m_Pivot.x
@@ -1864,6 +1888,18 @@ PrefabInstance:
     - target: {fileID: 3919278843704819046, guid: 8136bf83e5851c844bcf18d729abf9ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530281721354506322, guid: 8136bf83e5851c844bcf18d729abf9ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287754735102704213, guid: 8136bf83e5851c844bcf18d729abf9ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1145330254}
+    - target: {fileID: 7287754735102704213, guid: 8136bf83e5851c844bcf18d729abf9ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeSpeed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
