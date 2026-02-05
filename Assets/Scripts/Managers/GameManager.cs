@@ -18,12 +18,12 @@ public class GameManager : MonoBehaviour
         Menu,
         Evolution
     }
-    public GameState currentState;    public float maxHp;
+    public GameState currentState;
+    public float maxHp;
     [HideInInspector] public float currentHp;
     public int currentResources;
     [HideInInspector] public int evolutionPoints;
     [HideInInspector] public Bunker bunker;
-    [HideInInspector] public JsonSave save;
     private float gameSpeed = 1.0f;
     private readonly List<float> gameSpeeds = new (){ 1.0f, 2.5f, 5.0f };
     private void Awake()
@@ -39,7 +39,8 @@ public class GameManager : MonoBehaviour
         SwitchState(GameState.Playing);
         bunker = GameObject.FindGameObjectWithTag("Shelter").GetComponent<Bunker>();
         currentHp = maxHp;
-        save = GameObject.FindGameObjectWithTag("Save").GetComponent<JsonSave>();
+        
+        saveData = JsonSave.LoadData();
     }
     private void Update()
     {
@@ -60,14 +61,12 @@ public class GameManager : MonoBehaviour
             case GameState.Win:
                 Time.timeScale = 0f;
                 evolutionPoints++;
-                save.SaveData();
                 break;
             case GameState.Menu:
                 Time.timeScale = 0f;
                 break;
             case GameState.Evolution:
                 Time.timeScale = 0f;
-                save.LoadData();
                 break;
         }
     }

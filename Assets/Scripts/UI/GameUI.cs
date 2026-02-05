@@ -1,12 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI
 {
     public class GameUI : MonoBehaviour
     {
-        [SerializeField] private TMP_Text resourceText, versionText;
+        [SerializeField] private TMP_Text resourceText, versionText, healthText;
         private GameObject loseImage, winImage;
         private Image heatBar;
         private void Start()
@@ -39,7 +40,19 @@ namespace UI
         private void Update()
         {
             resourceText.text = GameManager.Instance.currentResources.ToString();
+            healthText.text = Mathf.FloorToInt(GameManager.Instance.currentHp).ToString();
             heatBar.fillAmount = GameManager.Instance.bunker.currentHeat / Mathf.Max(GameManager.Instance.bunker.maxHeat, 1);
+        }
+
+        public void ReturnToMenu()
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        public void ResetProgress()
+        {
+            JsonSave.DeleteSave();
+            ReturnToMenu();
         }
     }
 }

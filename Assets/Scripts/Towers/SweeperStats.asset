@@ -32,15 +32,12 @@ MonoBehaviour:
   extraProjectiles: 0
   additionalProjectile: 0
   resourcesMultiplier: 1
-  upgradeCost: 200
-  upgradeCostScaling: 2
+  upgradeCost: 25
+  upgradeCostScaling: 1.5
   upgradePool:
-  - {fileID: 11400000, guid: a5a5d01ea9618c64ea9b9ffe8976d11f, type: 2}
-  - {fileID: 11400000, guid: e01229b7137bdc74ca21e905dac1a98a, type: 2}
-  - {fileID: 11400000, guid: fcb65701159f13346a1d936c37ae713e, type: 2}
-  - {fileID: 11400000, guid: b99c32a92da214642b59390fe4b6296e, type: 2}
-  - {fileID: 11400000, guid: 0b99b852d105bb8419c34814480e3c32, type: 2}
-  - {fileID: 11400000, guid: c3076566899d74547b42142e501529cd, type: 2}
+  - {fileID: 11400000, guid: efe5bc1e982b111488d22578982ca6b4, type: 2}
+  - {fileID: 11400000, guid: 07b40758ba1f6dc49be22c6b06093b97, type: 2}
+  - {fileID: 11400000, guid: ff8ba86e406fb9a4ea5140f336be41bb, type: 2}
   model:
   - {fileID: 3465668703900256041, guid: 5a871098af20c0845b48abfb72a54f75, type: 3}
   - {fileID: 3859750222325160072, guid: 39ae6c54b2f0cce4ca149d25afa7670b, type: 3}

@@ -1,17 +1,28 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelButton : MonoBehaviour
 {
     [field: SerializeField] public List<LevelButton> Parents { get; private set; }
     [field: SerializeField] public LevelStatus Status { get; set; }
+    [field: SerializeField] public int LevelIndex { get; private set; }
     
     public enum LevelStatus
     {
         Locked,
         Open,
         Completed
+    }
+
+    private void OnEnable()
+    {
+        if (JsonSave.LoadData().levelsCompleted.Contains(LevelIndex))
+        {
+            Status = LevelStatus.Completed;
+        }
     }
 
     private void Start()
@@ -25,13 +36,20 @@ public class LevelButton : MonoBehaviour
         }
 
         Status = Parents.Exists(p => p.Status == LevelStatus.Completed) ? LevelStatus.Open : LevelStatus.Locked;
+
+        GetComponent<Button>().interactable = Status switch
+        {
+            LevelStatus.Locked or LevelStatus.Completed => false,
+            LevelStatus.Open => true,
+            _ => throw new ArgumentOutOfRangeException()
+        };
     }
     
-    public void LoadScene(string sceneName)
+    public void LoadScene()
     {
         if (Status != LevelStatus.Open) return;
         
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(LevelIndex);
     }
 
 #if UNITY_EDITOR

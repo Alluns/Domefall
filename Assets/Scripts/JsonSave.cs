@@ -1,33 +1,29 @@
-using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization.Json;
-using Unity.Collections;
-using UnityEditor.Embree;
 using UnityEngine;
 
-public class JsonSave : MonoBehaviour
+public static class JsonSave
 {
-    string path;
-    string fileName = "Gp2_SaveData";
-    
-    
-    public void SaveData()
+    private static string Path => Application.persistentDataPath + "/" + FileName + ".json";
+
+    private const string FileName = "Gp2_SaveData";
+
+    public static void Save(SaveData data)
     {
-        string jsonString = JsonUtility.ToJson(GameManager.Instance.saveData);
-        MakePath();
-        File.WriteAllText(path, jsonString);
+        string jsonString = JsonUtility.ToJson(data);
+        File.WriteAllText(Path, jsonString);
     }
-    public void LoadData()
+
+    public static SaveData LoadData()
     {
-        if (File.Exists(path))
-        {
-            string jsonString = File.ReadAllText(path);
-            GameManager.Instance.saveData = JsonUtility.FromJson<SaveData>(jsonString);
-        }
-        else SaveData();
+        if (!File.Exists(Path)) Save(new SaveData());
+        
+        string jsonString = File.ReadAllText(Path);
+        
+        return JsonUtility.FromJson<SaveData>(jsonString);
     }
-    void MakePath()
+
+    public static void DeleteSave()
     {
-        path = Application.persistentDataPath + "/" + fileName + ".json";
+        Save(new SaveData());
     }
 }
