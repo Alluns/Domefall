@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UI;
 using UnityEngine;
 
 namespace Managers
@@ -32,9 +31,18 @@ namespace Managers
                     transform.Find("Tower Selection").gameObject.SetActive(true);
                     menus.Push(transform.Find("Tower Selection").gameObject);
                     break;
+                case Menus.PauseScreen:
+                    transform.Find("Pause Screen").gameObject.SetActive(true);
+                    menus.Push(transform.Find("Pause Screen").gameObject);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(menu), menu, null);
             }
+        }
+
+        public void OpenUI(int menuIndex)
+        {
+            OpenUI((Menus) menuIndex);
         }
 
         public void CloseLastUI()
@@ -43,9 +51,10 @@ namespace Managers
         }
     }
 
-    public enum Menus
+    [Serializable] public enum Menus
     {
         UpgradeMenu,
-        TowerSelectionMenu
+        TowerSelectionMenu,
+        PauseScreen
     }
 }

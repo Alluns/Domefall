@@ -27,15 +27,13 @@ public class LevelButton : MonoBehaviour
 
     private void Start()
     {
-        if (Status == LevelStatus.Completed) return;
-
-        if (Parents.Count == 0)
+        
+        if (Status != LevelStatus.Completed)
         {
-            Status = LevelStatus.Open;
-            return;
+            Status = Parents.Exists(p => p.Status == LevelStatus.Completed) ? LevelStatus.Open : LevelStatus.Locked;
+            
+            if (Parents.Count == 0) Status = LevelStatus.Open;
         }
-
-        Status = Parents.Exists(p => p.Status == LevelStatus.Completed) ? LevelStatus.Open : LevelStatus.Locked;
 
         GetComponent<Button>().interactable = Status switch
         {

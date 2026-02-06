@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
     public int currentResources;
     [HideInInspector] public int evolutionPoints;
     [HideInInspector] public Bunker bunker;
-    private float gameSpeed = 1.0f;
-    private readonly List<float> gameSpeeds = new (){ 1.0f, 2.5f, 5.0f };
+    public float gameSpeed = 1.0f;
+    private readonly List<float> gameSpeeds = new (){ 1.0f, 2f, 3.0f };
     private void Awake()
     {
         if(Instance != null && Instance != this)
