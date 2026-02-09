@@ -43,6 +43,7 @@ namespace Towers
                 return false;
             }
             muzzleFlashes[currentBarrel].Play();
+            SoundManager.Instance.PlaySfx(SoundManager.Sfx.BasicShot, 1.5f);
             currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
             
             targetEnemy.TakeDamage(stats.damage);

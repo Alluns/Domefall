@@ -33,14 +33,13 @@ public class GameManager : MonoBehaviour
             throw new System.Exception("2 singleton of the same [GamesManager exist]");
         }
         Instance = this;
+        saveData = JsonSave.LoadData();
     }
     public void Start()
     {
         SwitchState(GameState.Playing);
         bunker = GameObject.FindGameObjectWithTag("Shelter").GetComponent<Bunker>();
         currentHp = maxHp;
-        
-        saveData = JsonSave.LoadData();
     }
     private void Update()
     {

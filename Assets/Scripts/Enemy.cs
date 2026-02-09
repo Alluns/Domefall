@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public float maxHp;
     public float dmg;
     public int resourcesGranted;
+
+    [HideInInspector]
     public float distanceToShelter;
 
     private NavMeshAgent navMeshAgent;
@@ -67,6 +69,7 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.EnemyDie, 2f);
         GameManager.Instance.GetResource(resourcesGranted);
         EnemyManager.Instance.enemiesAlive--;
         Destroy(gameObject);

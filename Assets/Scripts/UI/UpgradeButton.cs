@@ -24,6 +24,7 @@ namespace UI
             Tower tower = TouchInteraction.Instance.selectedObject.GetComponent<Tower>();
 
             if (tower) tower.AddUpgrade(upgrade);
+            SoundManager.Instance.PlaySfx(SoundManager.Sfx.TowerUpgrade, 1f);
 
             GameManager.Instance.SwitchState(GameManager.GameState.Playing);
             UIManager.Instance.CloseLastUI();

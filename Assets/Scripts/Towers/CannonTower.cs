@@ -48,6 +48,7 @@ namespace Towers
 
             //StartCoroutine(TrailAnimation(Instantiate(trail, muzzleFlashes[0].transform.position, Quaternion.identity), targetEnemy.transform.position));
             muzzleFlashes[currentBarrel].Play();
+            SoundManager.Instance.PlaySfx(SoundManager.Sfx.GroundTower, 1.8f);
             currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
 
             targetEnemy.TakeDamage(stats.damage);

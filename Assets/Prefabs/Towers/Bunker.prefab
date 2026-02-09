@@ -5470,7 +5470,7 @@ Transform:
   m_GameObject: {fileID: 5468519436513973702}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -16.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5514,14 +5514,12 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 384
-  evoPoints: 5
-  range: 40
+  evoPoints: 0
+  range: 50
   attackSpeed: 15
   armour: 200
-  maxHp: 100
+  maxHp: 10
   currentHp: 0
-  maxHeat: 50
-  currentHeat: 0
 --- !u!1 &6216881267025356990
 GameObject:
   m_ObjectHideFlags: 0

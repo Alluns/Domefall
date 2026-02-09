@@ -55,5 +55,10 @@ namespace UI
             GameManager.Instance.ChangeSpeed();
             speedText.text = $"{Mathf.FloorToInt(GameManager.Instance.gameSpeed)}x";
         }
+
+        public void PauseGame()
+        {
+            GameManager.Instance.TogglePause();
+        }
     }
 }
