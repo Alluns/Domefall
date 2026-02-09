@@ -13,7 +13,7 @@ namespace Towers
 
         private void Start()
         {
-            turret = transform.Find($"{stats.model[level].name}/Base");
+            turret = transform.Find($"{stats.model[level].name}/Base/Turret");
             breech = turret.transform.Find("Breech");
 
             muzzleFlashes = transform.Find(stats.model[level].name).GetComponentsInChildren<ParticleSystem>().ToList();
@@ -32,7 +32,7 @@ namespace Towers
             Quaternion rotation = Quaternion.LookRotation(targetEnemy.transform.position - transform.position);
             Quaternion bodyRotation = Quaternion.Euler(0, rotation.eulerAngles.y, 0);
             
-            transform.rotation = Quaternion.Slerp(transform.rotation, bodyRotation, Time.deltaTime * 5f);
+            turret.rotation = Quaternion.Slerp(turret.rotation, bodyRotation, Time.deltaTime * 5f);
         }
 
         protected override bool Attack()
@@ -57,7 +57,7 @@ namespace Towers
         {
             base.Upgrade();
 
-            turret = transform.Find($"{stats.model[level].name}/Base");
+            turret = transform.Find($"{stats.model[level].name}/Base/Turret");
             breech = turret.transform.Find("Breech");
 
             currentBarrel = 0;

@@ -1,23 +1,19 @@
-using TMPro;
+ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace UI
 {
     public class GameUI : MonoBehaviour
     {
-        [SerializeField] private TMP_Text resourceText, versionText, healthText;
-        private GameObject loseImage, winImage;
-        private Image heatBar;
+        [SerializeField] private TMP_Text resourceText, versionText, healthText, speedText;
+        private GameObject loseScreen, winScreen;
         private void Start()
         {
-            loseImage = transform.Find("Lose Image").gameObject;
-            loseImage.gameObject.SetActive(false);
-            winImage = transform.Find("Victory Image").gameObject;
-            winImage.gameObject.SetActive(false);
-
-            heatBar = transform.Find("HeatBar").GetComponent<Image>();
+            winScreen = transform.Find("Victory Screen").gameObject;
+            winScreen.gameObject.SetActive(false);
+            loseScreen = transform.Find("Game Over Screen").gameObject;
+            loseScreen.gameObject.SetActive(false);
 
             versionText.text = $"Project {Application.productName} version: {Application.version}";
         
@@ -29,10 +25,10 @@ namespace UI
             switch (gameState)
             {
                 case GameManager.GameState.Lose:
-                    loseImage.SetActive(true);
+                    loseScreen.SetActive(true);
                     break;
                 case GameManager.GameState.Win:
-                    winImage.SetActive(true);
+                    winScreen.SetActive(true);
                     break;
             }
         }
@@ -41,7 +37,6 @@ namespace UI
         {
             resourceText.text = GameManager.Instance.currentResources.ToString();
             healthText.text = Mathf.FloorToInt(GameManager.Instance.currentHp).ToString();
-            heatBar.fillAmount = GameManager.Instance.bunker.currentHeat / Mathf.Max(GameManager.Instance.bunker.maxHeat, 1);
         }
 
         public void ReturnToMenu()
@@ -53,6 +48,12 @@ namespace UI
         {
             JsonSave.DeleteSave();
             ReturnToMenu();
+        }
+
+        public void ChangeSpeed()
+        {
+            GameManager.Instance.ChangeSpeed();
+            speedText.text = $"{Mathf.FloorToInt(GameManager.Instance.gameSpeed)}x";
         }
     }
 }
