@@ -62,8 +62,8 @@ public class Bunker : MonoBehaviour, IClickable
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.startColor = new Color (1, 0, 0, 0.3f);
-        lineRenderer.endColor = new Color(1, 0, 0, 0.3f);
+        lineRenderer.startColor = new Color (1, 0, 0, 0.7f);
+        lineRenderer.endColor = new Color(1, 0, 0, 0.7f);
 
         //Highlight.SetActive(false);
     }
@@ -102,6 +102,7 @@ public class Bunker : MonoBehaviour, IClickable
             Enemy target = hit.transform.gameObject.GetComponent<Enemy>();
             target.TakeDamage(dmg);
             muzzleFlashes[currentBarrel].Play();
+            SoundManager.Instance.PlaySfx(SoundManager.Sfx.GroundTower3, 1f);
             currentBarrel++;
             currentBarrel %= muzzleFlashes.Count;
             attackCooldown = 1 / attackSpeed;

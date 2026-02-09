@@ -21,5 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level Death.unity
     guid: dfdb404c5e519e54390057f8e0d6308f
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: dd5bc2f75e0a326428ae25a0b88f7a27, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2b47f0fc4bb211a418d8b7aac9ff3df5, type: 3}
   m_UseUCBPForAssetBundles: 0

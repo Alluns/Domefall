@@ -47,6 +47,7 @@ namespace Towers
 
             currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
             muzzleFlashes[currentBarrel].Play();
+            SoundManager.Instance.PlaySfx(SoundManager.Sfx.AirAndGround, 0.7f);
 
             targetEnemy.TakeDamage(stats.damage);
             

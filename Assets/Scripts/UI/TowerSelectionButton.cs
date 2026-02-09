@@ -20,7 +20,9 @@ namespace UI
             {
                 newTower.AddUpgrade(upgrade);
             }
-            
+
+            SoundManager.Instance.PlaySfx(SoundManager.Sfx.TowerUpgrade2, 1f);
+
             Destroy(tower.gameObject);
             
             GameManager.Instance.SwitchState(GameManager.GameState.Playing);
