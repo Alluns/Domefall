@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6295203730766238603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Crates
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Crates
+  Guid:
+    Data1: -39887618
+    Data2: 1119467360
+    Data3: 1906937757
+    Data4: -1843626318
+  Banks:
+  - {fileID: -704517784210965125}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2927
+--- !u!114 &-6153428199711155078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Air Tower
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Air Tower
+  Guid:
+    Data1: 1616670380
+    Data2: 1324627423
+    Data3: -358958410
+    Data4: -971092166
+  Banks:
+  - {fileID: -704517784210965125}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 625
 --- !u!114 &-5309199279304138802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +69,10 @@ MonoBehaviour:
   Path: Assets/Fmod/FmodBank/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639058016661857044
+  lastModified: 639062314207095323
   FileSizes:
   - Name: Desktop
-    Value: 876
+    Value: 1254
   Exists: 1
 --- !u!114 &-704517784210965125
 MonoBehaviour:
@@ -35,11 +89,38 @@ MonoBehaviour:
   Path: Assets/Fmod/FmodBank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639058016661857044
+  lastModified: 639062314207085324
   FileSizes:
   - Name: Desktop
-    Value: 642336
+    Value: 2113216
   Exists: 1
+--- !u!114 &-645865030976360478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Die
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Enemy Die
+  Guid:
+    Data1: -789094518
+    Data2: 1195115865
+    Data3: -968281213
+    Data4: 1326483678
+  Banks:
+  - {fileID: -704517784210965125}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5812
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,18 +137,26 @@ MonoBehaviour:
   - {fileID: -5309199279304138802}
   - {fileID: -704517784210965125}
   EditorEvents:
-  - {fileID: 5962896163253507340}
+  - {fileID: 132372787477194131}
+  - {fileID: 4099555107496149315}
+  - {fileID: 3307574965986906244}
+  - {fileID: -645865030976360478}
+  - {fileID: -6153428199711155078}
+  - {fileID: 4914804719274520724}
+  - {fileID: 8109165407237858565}
+  - {fileID: 3745499496433673451}
+  - {fileID: -6295203730766238603}
   EditorParameters: []
   MasterBanks:
   - {fileID: -704517784210965125}
   StringsBanks:
   - {fileID: -5309199279304138802}
   cacheVersion: 131858
-  cacheTime: 639058016661857044
+  cacheTime: 639062314207095323
   SerializableEventsDict:
   - key: event:/Music
     index: 0
---- !u!114 &5962896163253507340
+--- !u!114 &132372787477194131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,9 +166,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music
+  m_Name: event:/Music/Music2
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music
+  Path: event:/Music/Music2
+  Guid:
+    Data1: -986071030
+    Data2: 1139432286
+    Data3: -309845848
+    Data4: 201843798
+  Banks:
+  - {fileID: -704517784210965125}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 92160
+--- !u!114 &3307574965986906244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Music1
   Guid:
     Data1: -1379855757
     Data2: 1249099150
@@ -94,3 +210,111 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 49230
+--- !u!114 &3745499496433673451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AirGround Tower
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/AirGround Tower
+  Guid:
+    Data1: -1927437865
+    Data2: 1186453863
+    Data3: -650392435
+    Data4: 1949689341
+  Banks:
+  - {fileID: -704517784210965125}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 750
+--- !u!114 &4099555107496149315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Basic Tower
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Basic Tower
+  Guid:
+    Data1: -2130809813
+    Data2: 1077355667
+    Data3: -1566006870
+    Data4: 2037847839
+  Banks:
+  - {fileID: -704517784210965125}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 492
+--- !u!114 &4914804719274520724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Ground Tower
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Ground Tower
+  Guid:
+    Data1: 130078920
+    Data2: 1227678286
+    Data3: -1603649634
+    Data4: -1996832793
+  Banks:
+  - {fileID: -704517784210965125}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3425
+--- !u!114 &8109165407237858565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/TowerUpgrade
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/TowerUpgrade
+  Guid:
+    Data1: -1579008818
+    Data2: 1335724157
+    Data3: 1166083469
+    Data4: 1995392181
+  Banks:
+  - {fileID: -704517784210965125}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1129

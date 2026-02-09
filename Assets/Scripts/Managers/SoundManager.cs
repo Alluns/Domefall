@@ -10,6 +10,22 @@ public class AudioManager : MonoBehaviour
     [field: Header("Music")]
     [field: SerializeField] public EventReference Mlevel01 { get; private set; }
     private EventInstance _Mlevel01;
+    [field: SerializeField] public EventReference Mlevel02 { get; private set; }
+    private EventInstance _Mlevel02;
+    [field: SerializeField] public EventReference SFXbasic { get; private set; }
+    private EventInstance _SFXbasic;
+    [field: SerializeField] public EventReference SFXAirGround { get; private set; }
+    private EventInstance _SFXAirGround;
+    [field: SerializeField] public EventReference SFXAir { get; private set; }
+    private EventInstance _SFXAir;
+    [field: SerializeField] public EventReference SFXGround { get; private set; }
+    private EventInstance _SFXGround;
+    [field: SerializeField] public EventReference SFXEnemyDie { get; private set; }
+    private EventInstance _SFXEnemyDie;
+    [field: SerializeField] public EventReference SFXTowerUpgrade { get; private set; }
+    private EventInstance _TowerUpgrade;
+    [field: SerializeField] public EventReference Crates{ get; private set; }
+    private EventInstance _Crates;
     [field: Header("Player SFX")]
 
     [field: Header("Ambiance")]

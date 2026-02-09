@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{adc11273-bd8e-4a73-a16d-0b1917a3c361}">
 		<property name="name">
-			<value>Music</value>
+			<value>Music1</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{3dc646f4-2e07-4fc6-acef-decc985b5af2}</destination>
+			<destination>{9ca508f1-8012-4f2b-97ff-a1aacea30670}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{fc9f007f-309b-471b-8b17-c2b279cb8f3b}</destination>
@@ -101,10 +101,10 @@
 	</object>
 	<object class="EventMixerGroup" id="{4a96ff22-c9a0-4a6e-b713-dca5e39de11e}">
 		<property name="volume">
-			<value>-35</value>
+			<value>-30</value>
 		</property>
 		<property name="name">
-			<value>Audio 1</value>
+			<value>FirstMusic</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{cfaea8fc-093d-4103-bd32-2e5fc307d435}</destination>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{ff8c59eb-f37d-4da5-90d0-0e2fc4367428}">
+		<property name="assetPath">
+			<value>Airtower 2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.625</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c0ce504c-37c0-4a53-88bf-72e0fa365582}</destination>
+		</relationship>
+	</object>
+</objects>

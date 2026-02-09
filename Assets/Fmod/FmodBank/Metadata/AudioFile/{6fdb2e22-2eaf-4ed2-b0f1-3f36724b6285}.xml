@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{6fdb2e22-2eaf-4ed2-b0f1-3f36724b6285}">
+		<property name="assetPath">
+			<value>TowerUpgrade 1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.125</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c0ce504c-37c0-4a53-88bf-72e0fa365582}</destination>
+		</relationship>
+	</object>
+</objects>

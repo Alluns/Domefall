@@ -989,7 +989,63 @@ MonoBehaviour:
       Data2: 1249099150
       Data3: 420179361
       Data4: 1640211223
-    Path: event:/Music
+    Path: event:/Music/Music1
+  <Mlevel02>k__BackingField:
+    Guid:
+      Data1: -986071030
+      Data2: 1139432286
+      Data3: -309845848
+      Data4: 201843798
+    Path: event:/Music/Music2
+  <SFXbasic>k__BackingField:
+    Guid:
+      Data1: -2130809813
+      Data2: 1077355667
+      Data3: -1566006870
+      Data4: 2037847839
+    Path: event:/SFX/Basic Tower
+  <SFXAirGround>k__BackingField:
+    Guid:
+      Data1: -1927437865
+      Data2: 1186453863
+      Data3: -650392435
+      Data4: 1949689341
+    Path: event:/SFX/AirGround Tower
+  <SFXAir>k__BackingField:
+    Guid:
+      Data1: 1616670380
+      Data2: 1324627423
+      Data3: -358958410
+      Data4: -971092166
+    Path: event:/SFX/Air Tower
+  <SFXGround>k__BackingField:
+    Guid:
+      Data1: 130078920
+      Data2: 1227678286
+      Data3: -1603649634
+      Data4: -1996832793
+    Path: event:/SFX/Ground Tower
+  <SFXEnemyDie>k__BackingField:
+    Guid:
+      Data1: -789094518
+      Data2: 1195115865
+      Data3: -968281213
+      Data4: 1326483678
+    Path: event:/SFX/Enemy Die
+  <SFXTowerUpgrade>k__BackingField:
+    Guid:
+      Data1: -1579008818
+      Data2: 1335724157
+      Data3: 1166083469
+      Data4: 1995392181
+    Path: event:/SFX/TowerUpgrade
+  <Crates>k__BackingField:
+    Guid:
+      Data1: -39887618
+      Data2: 1119467360
+      Data3: 1906937757
+      Data4: -1843626318
+    Path: event:/SFX/Crates
 --- !u!1001 &1489642100
 PrefabInstance:
   m_ObjectHideFlags: 0
