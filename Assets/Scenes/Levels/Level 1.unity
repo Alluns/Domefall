@@ -285,7 +285,7 @@ MonoBehaviour:
     groups: []
   waves:
   - enemyGroups:
-    - minEnemyCount: 8
+    - minEnemyCount: 10
       maxEnemyCount: 12
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 0d12d14f0d2fd2740b5a5c7b090a058b, type: 3}
@@ -296,14 +296,14 @@ MonoBehaviour:
     spawnCount: 0
     spawnQuota: 0
   - enemyGroups:
-    - minEnemyCount: 5
-      maxEnemyCount: 5
+    - minEnemyCount: 10
+      maxEnemyCount: 12
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 0d12d14f0d2fd2740b5a5c7b090a058b, type: 3}
       spawnPosition: 1
       spawnCount: 0
-    - minEnemyCount: 5
-      maxEnemyCount: 5
+    - minEnemyCount: 10
+      maxEnemyCount: 12
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 0d12d14f0d2fd2740b5a5c7b090a058b, type: 3}
       spawnPosition: 2
