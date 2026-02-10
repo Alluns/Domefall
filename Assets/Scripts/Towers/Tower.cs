@@ -10,6 +10,7 @@ namespace Towers
     public abstract class Tower : MonoBehaviour, IClickable
     {
         public TowerStats towerStats;
+        public EvolutionNode.EvolutionType towerType;
         protected TowerStats stats;
 
 #if UNITY_EDITOR
@@ -66,8 +67,6 @@ namespace Towers
             
                 Instantiate(stats.model[level], transform).name = stats.model[level].name;
             }
-            
-            
         }
 
         public virtual void AddUpgrade(TowerUpgrade upgrade)
@@ -82,6 +81,60 @@ namespace Towers
         {
             stats = Instantiate(towerStats);
             
+            SaveData saveData = GameManager.Instance.saveData;
+            List<EvolutionNode.Evolution> evolutions = saveData.evolutions.Where(e => e.type == towerType).ToList();
+
+            // TODO: This sucks
+            foreach (UpgradeAttribute attribute in evolutions.SelectMany(evolution => evolution.attributes))
+            {
+                switch (attribute.upgradeType)
+                {
+                    case UpgradeType.MaxHealth:
+                        stats.health += attribute.additive;
+                        stats.health *= attribute.multiplicative;
+                        break;
+                    case UpgradeType.Regen:
+                        stats.regeneration += attribute.additive;
+                        stats.regeneration *= attribute.multiplicative;
+                        break;
+                    case UpgradeType.Damage:
+                        stats.damage += attribute.additive;
+                        stats.damage *= attribute.multiplicative;
+                        break;
+                    case UpgradeType.AttackSpeed:
+                        stats.attackSpeed += attribute.additive;
+                        stats.attackSpeed *= attribute.multiplicative;
+                        break;
+                    case UpgradeType.Range:
+                        stats.range += attribute.additive;
+                        stats.range *= attribute.multiplicative;
+                        break;
+                    case UpgradeType.Ricochet:
+                        stats.ricochet += (int) attribute.additive;
+                        stats.ricochet *= (int) attribute.multiplicative;
+                        break;
+                    case UpgradeType.ExtraShot:
+                        stats.extraProjectiles += (int) attribute.additive;
+                        stats.extraProjectiles *= (int) attribute.multiplicative;
+                        break;
+                    case UpgradeType.AdditionalProjectiles:
+                        stats.additionalProjectile += (int) attribute.additive;
+                        stats.additionalProjectile *= (int) attribute.multiplicative;
+                        break;
+                    case UpgradeType.Resources:
+                        stats.resourcesMultiplier += attribute.additive;
+                        stats.resourcesMultiplier *= attribute.multiplicative;
+                        break;
+                    case UpgradeType.Knockback:
+                        stats.knockBack += attribute.additive;
+                        stats.knockBack *= attribute.multiplicative;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+            
+            // TODO: This too, EW!
             foreach (UpgradeAttribute attribute in upgrades.SelectMany(upgrade => upgrade.upgradeAttributes))
             {
                 switch (attribute.upgradeType)

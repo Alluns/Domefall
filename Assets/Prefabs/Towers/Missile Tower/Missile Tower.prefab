@@ -31,7 +31,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 120423965159457524}
+  - {fileID: 7909480225277220908}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1013113690811177128
@@ -68,8 +68,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Towers.MissileTurret
   towerStats: {fileID: 11400000, guid: 449f82b3a1cff434881efbccaa876e5a, type: 2}
+  towerType: 3
   displayRange: 0
-  displayAim: 0
+  displayTarget: 0
 --- !u!1001 &4836929187632825992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,8 +128,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0ae39058a1771445a09934d7e35d17e, type: 3}
---- !u!4 &120423965159457524 stripped
+--- !u!4 &7909480225277220908 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4795187419208270972, guid: a0ae39058a1771445a09934d7e35d17e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3378868654953389732, guid: a0ae39058a1771445a09934d7e35d17e, type: 3}
   m_PrefabInstance: {fileID: 4836929187632825992}
   m_PrefabAsset: {fileID: 0}
