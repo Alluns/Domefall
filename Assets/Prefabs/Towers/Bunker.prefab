@@ -5516,7 +5516,7 @@ MonoBehaviour:
     m_Bits: 384
   evoPoints: 0
   range: 50
-  attackSpeed: 1
+  attackSpeed: 0.75
   armour: 500
   maxHp: 2500
   currentHp: 0
