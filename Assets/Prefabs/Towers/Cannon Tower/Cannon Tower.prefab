@@ -31,7 +31,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5664358469213523869}
+  - {fileID: 6426606776130178342}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1013113690811177128
@@ -68,8 +68,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Towers.GroundTurret
   towerStats: {fileID: 11400000, guid: 02718f8bbf4035b4fbc128ead72a9b1e, type: 2}
+  towerType: 2
   displayRange: 0
-  displayAim: 0
+  displayTarget: 0
   trail: {fileID: 1907157795892356962, guid: 9c005999612bcad469cbfa8dbbe93c16, type: 3}
 --- !u!1001 &3887054739267142218
 PrefabInstance:
@@ -132,8 +133,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eb544cdff0888145b2180c6d5e12e49, type: 3}
---- !u!4 &5664358469213523869 stripped
+--- !u!4 &6426606776130178342 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8893008051283873239, guid: 5eb544cdff0888145b2180c6d5e12e49, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7844834461087682412, guid: 5eb544cdff0888145b2180c6d5e12e49, type: 3}
   m_PrefabInstance: {fileID: 3887054739267142218}
   m_PrefabAsset: {fileID: 0}
