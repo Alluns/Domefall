@@ -170,28 +170,52 @@ MonoBehaviour:
     groups: []
   waves:
   - enemyGroups:
-    - minEnemyCount: 15
-      maxEnemyCount: 20
+    - minEnemyCount: 7
+      maxEnemyCount: 10
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 0d12d14f0d2fd2740b5a5c7b090a058b, type: 3}
       spawnPosition: 0
+      spawnCount: 0
+    - minEnemyCount: 8
+      maxEnemyCount: 10
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 0d12d14f0d2fd2740b5a5c7b090a058b, type: 3}
+      spawnPosition: 1
       spawnCount: 0
     spawnInterval: 0
     waitForNextWave: 2
     spawnCount: 0
     spawnQuota: 0
   - enemyGroups:
-    - minEnemyCount: 10
-      maxEnemyCount: 12
+    - minEnemyCount: 5
+      maxEnemyCount: 7
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 0d12d14f0d2fd2740b5a5c7b090a058b, type: 3}
       spawnPosition: 0
       spawnCount: 0
-    - minEnemyCount: 10
-      maxEnemyCount: 12
+    - minEnemyCount: 5
+      maxEnemyCount: 7
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 0d12d14f0d2fd2740b5a5c7b090a058b, type: 3}
+      spawnPosition: 1
+      spawnCount: 0
+    - minEnemyCount: 5
+      maxEnemyCount: 6
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 6239ab1e704e2c24db6dda386c8c9c6a, type: 3}
+      spawnPosition: 0
+      spawnCount: 0
+    - minEnemyCount: 5
+      maxEnemyCount: 6
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 6239ab1e704e2c24db6dda386c8c9c6a, type: 3}
       spawnPosition: 1
+      spawnCount: 0
+    - minEnemyCount: 5
+      maxEnemyCount: 7
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 95722787dd9363e4295c44723327ce22, type: 3}
+      spawnPosition: 0
       spawnCount: 0
     - minEnemyCount: 5
       maxEnemyCount: 7
@@ -204,26 +228,50 @@ MonoBehaviour:
     spawnCount: 0
     spawnQuota: 0
   - enemyGroups:
-    - minEnemyCount: 10
-      maxEnemyCount: 12
+    - minEnemyCount: 5
+      maxEnemyCount: 7
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 0d12d14f0d2fd2740b5a5c7b090a058b, type: 3}
       spawnPosition: 0
       spawnCount: 0
-    - minEnemyCount: 20
-      maxEnemyCount: 24
+    - minEnemyCount: 5
+      maxEnemyCount: 7
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 0d12d14f0d2fd2740b5a5c7b090a058b, type: 3}
+      spawnPosition: 1
+      spawnCount: 0
+    - minEnemyCount: 10
+      maxEnemyCount: 12
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
+      spawnPosition: 0
+      spawnCount: 0
+    - minEnemyCount: 10
+      maxEnemyCount: 12
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
       spawnPosition: 1
       spawnCount: 0
-    - minEnemyCount: 10
-      maxEnemyCount: 12
+    - minEnemyCount: 5
+      maxEnemyCount: 6
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 6239ab1e704e2c24db6dda386c8c9c6a, type: 3}
+      spawnPosition: 0
+      spawnCount: 0
+    - minEnemyCount: 5
+      maxEnemyCount: 6
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 6239ab1e704e2c24db6dda386c8c9c6a, type: 3}
       spawnPosition: 1
       spawnCount: 0
-    - minEnemyCount: 10
-      maxEnemyCount: 12
+    - minEnemyCount: 5
+      maxEnemyCount: 6
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 95722787dd9363e4295c44723327ce22, type: 3}
+      spawnPosition: 0
+      spawnCount: 0
+    - minEnemyCount: 5
+      maxEnemyCount: 6
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 95722787dd9363e4295c44723327ce22, type: 3}
       spawnPosition: 1
@@ -283,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8471633972918668163, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8471633972918668163, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -713,7 +761,6 @@ Transform:
   m_Children:
   - {fileID: 1904748082}
   - {fileID: 658698571}
-  - {fileID: 1824974107}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1101999025
@@ -1231,72 +1278,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1824974106
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1083293316}
-    m_Modifications:
-    - target: {fileID: -4538191780598047612, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
-      propertyPath: turret
-      value: 
-      objectReference: {fileID: 5818864555074326570, guid: f7292cc7754f691468a1920c3718c4b0, type: 3}
-    - target: {fileID: 5831394617134193463, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
-      propertyPath: m_Name
-      value: Construction Site (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8471633972918668163, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8471633972918668163, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8471633972918668163, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.6000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 8471633972918668163, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.92387956
-      objectReference: {fileID: 0}
-    - target: {fileID: 8471633972918668163, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8471633972918668163, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.38268343
-      objectReference: {fileID: 0}
-    - target: {fileID: 8471633972918668163, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8471633972918668163, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8471633972918668163, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 8471633972918668163, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
---- !u!4 &1824974107 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8471633972918668163, guid: 6e1bd705128039b45bca7a5e992e9f5c, type: 3}
-  m_PrefabInstance: {fileID: 1824974106}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1857883518
 GameObject:
   m_ObjectHideFlags: 0
