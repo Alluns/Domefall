@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 1732076975812324880}
   - component: {fileID: -8125940730686128730}
   m_Layer: 8
-  m_Name: Drone 1
+  m_Name: Drone 3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,9 +421,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   moveSpeed: 6
-  maxHp: 1000
-  dmg: 100
-  resourcesGranted: 10
+  maxHp: 3000
+  dmg: 300
+  resourcesGranted: 30
   distanceToShelter: 10
 --- !u!1 &6417270154919927522
 GameObject:
