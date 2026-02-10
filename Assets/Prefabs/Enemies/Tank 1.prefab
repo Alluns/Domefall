@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1732076975812324880}
   - component: {fileID: -8125940730686128730}
   m_Layer: 7
-  m_Name: Ground Enemy
+  m_Name: Tank 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 832490160297577471}
-  - {fileID: 3017435059099313515}
+  - {fileID: 1022987430838966352}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1732076975812324880
@@ -68,12 +68,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355424ca3db0f8e4e8138f084af0bc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  moveSpeed: 4.5
-  maxHp: 150
-  dmg: 1
-  resourcesGranted: 2
+  moveSpeed: 4
+  maxHp: 200
+  dmg: 2
+  resourcesGranted: 3
   distanceToShelter: 10
---- !u!1001 &3344675130739638912
+--- !u!1001 &700548166535479227
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -81,59 +81,59 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7038047311647674954}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 718c295075f53a64f8b42282680bac41, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d9a323651d989d447bb89dfc170903ff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 718c295075f53a64f8b42282680bac41, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d9a323651d989d447bb89dfc170903ff, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 718c295075f53a64f8b42282680bac41, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d9a323651d989d447bb89dfc170903ff, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 718c295075f53a64f8b42282680bac41, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d9a323651d989d447bb89dfc170903ff, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 718c295075f53a64f8b42282680bac41, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d9a323651d989d447bb89dfc170903ff, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 718c295075f53a64f8b42282680bac41, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d9a323651d989d447bb89dfc170903ff, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.000000015454312
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 718c295075f53a64f8b42282680bac41, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d9a323651d989d447bb89dfc170903ff, type: 3}
       propertyPath: m_LocalRotation.z
+      value: 0.000000015454312
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d9a323651d989d447bb89dfc170903ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 718c295075f53a64f8b42282680bac41, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 718c295075f53a64f8b42282680bac41, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d9a323651d989d447bb89dfc170903ff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 718c295075f53a64f8b42282680bac41, type: 3}
+    - target: {fileID: -8679921383154817045, guid: d9a323651d989d447bb89dfc170903ff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 718c295075f53a64f8b42282680bac41, type: 3}
+    - target: {fileID: 919132149155446097, guid: d9a323651d989d447bb89dfc170903ff, type: 3}
       propertyPath: m_Name
-      value: Car_Lvl2
+      value: Tank_Lvl1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 718c295075f53a64f8b42282680bac41, type: 3}
---- !u!4 &3017435059099313515 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: d9a323651d989d447bb89dfc170903ff, type: 3}
+--- !u!4 &1022987430838966352 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 718c295075f53a64f8b42282680bac41, type: 3}
-  m_PrefabInstance: {fileID: 3344675130739638912}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d9a323651d989d447bb89dfc170903ff, type: 3}
+  m_PrefabInstance: {fileID: 700548166535479227}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3820271654583706083
 PrefabInstance:
