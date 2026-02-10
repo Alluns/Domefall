@@ -168,39 +168,101 @@ MonoBehaviour:
     groups: []
   - position: {x: -15, y: 0, z: 55}
     groups: []
+  - position: {x: 0, y: 0, z: 55}
+    groups: []
   waves:
   - enemyGroups:
-    - minEnemyCount: 10
-      maxEnemyCount: 12
+    - minEnemyCount: 5
+      maxEnemyCount: 6
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
       spawnPosition: 0
       spawnCount: 0
-    - minEnemyCount: 10
-      maxEnemyCount: 12
+    - minEnemyCount: 5
+      maxEnemyCount: 6
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
+      spawnPosition: 1
+      spawnCount: 0
+    - minEnemyCount: 0
+      maxEnemyCount: 0
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
+      spawnPosition: 2
+      spawnCount: 0
+    - minEnemyCount: 0
+      maxEnemyCount: 0
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 66ecf153248b8e14e81f3034e0be04aa, type: 3}
+      spawnPosition: 0
+      spawnCount: 0
+    - minEnemyCount: 5
+      maxEnemyCount: 6
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 66ecf153248b8e14e81f3034e0be04aa, type: 3}
       spawnPosition: 1
+      spawnCount: 0
+    - minEnemyCount: 5
+      maxEnemyCount: 6
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 66ecf153248b8e14e81f3034e0be04aa, type: 3}
+      spawnPosition: 2
       spawnCount: 0
     spawnInterval: 3
     waitForNextWave: 8
     spawnCount: 0
     spawnQuota: 0
   - enemyGroups:
-    - minEnemyCount: 26
-      maxEnemyCount: 32
+    - minEnemyCount: 13
+      maxEnemyCount: 16
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
       spawnPosition: 0
       spawnCount: 0
-    - minEnemyCount: 10
-      maxEnemyCount: 12
+    - minEnemyCount: 13
+      maxEnemyCount: 16
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
+      spawnPosition: 1
+      spawnCount: 0
+    - minEnemyCount: 0
+      maxEnemyCount: 0
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
+      spawnPosition: 2
+      spawnCount: 0
+    - minEnemyCount: 5
+      maxEnemyCount: 6
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 024f4fe312267f444a77b68d0cdfd894, type: 3}
+      spawnPosition: 0
+      spawnCount: 0
+    - minEnemyCount: 5
+      maxEnemyCount: 6
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 024f4fe312267f444a77b68d0cdfd894, type: 3}
       spawnPosition: 1
       spawnCount: 0
-    - minEnemyCount: 4
-      maxEnemyCount: 5
+    - minEnemyCount: 0
+      maxEnemyCount: 0
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 024f4fe312267f444a77b68d0cdfd894, type: 3}
+      spawnPosition: 2
+      spawnCount: 0
+    - minEnemyCount: 2
+      maxEnemyCount: 3
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 95722787dd9363e4295c44723327ce22, type: 3}
+      spawnPosition: 0
+      spawnCount: 0
+    - minEnemyCount: 2
+      maxEnemyCount: 3
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 95722787dd9363e4295c44723327ce22, type: 3}
+      spawnPosition: 1
+      spawnCount: 0
+    - minEnemyCount: 2
+      maxEnemyCount: 3
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 95722787dd9363e4295c44723327ce22, type: 3}
       spawnPosition: 1
@@ -210,23 +272,59 @@ MonoBehaviour:
     spawnCount: 0
     spawnQuota: 0
   - enemyGroups:
-    - minEnemyCount: 44
-      maxEnemyCount: 55
+    - minEnemyCount: 14
+      maxEnemyCount: 16
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
       spawnPosition: 0
       spawnCount: 0
-    - minEnemyCount: 10
-      maxEnemyCount: 12
+    - minEnemyCount: 14
+      maxEnemyCount: 16
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
+      spawnPosition: 1
+      spawnCount: 0
+    - minEnemyCount: 14
+      maxEnemyCount: 16
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
+      spawnPosition: 2
+      spawnCount: 0
+    - minEnemyCount: 0
+      maxEnemyCount: 0
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 6239ab1e704e2c24db6dda386c8c9c6a, type: 3}
+      spawnPosition: 0
+      spawnCount: 0
+    - minEnemyCount: 5
+      maxEnemyCount: 6
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 6239ab1e704e2c24db6dda386c8c9c6a, type: 3}
       spawnPosition: 1
       spawnCount: 0
-    - minEnemyCount: 6
-      maxEnemyCount: 8
+    - minEnemyCount: 5
+      maxEnemyCount: 6
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 6239ab1e704e2c24db6dda386c8c9c6a, type: 3}
+      spawnPosition: 2
+      spawnCount: 0
+    - minEnemyCount: 2
+      maxEnemyCount: 3
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 95722787dd9363e4295c44723327ce22, type: 3}
       spawnPosition: 1
+      spawnCount: 0
+    - minEnemyCount: 2
+      maxEnemyCount: 3
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 95722787dd9363e4295c44723327ce22, type: 3}
+      spawnPosition: 1
+      spawnCount: 0
+    - minEnemyCount: 2
+      maxEnemyCount: 3
+      enemyCount: 0
+      enemyPrefab: {fileID: 4120674367502412302, guid: 95722787dd9363e4295c44723327ce22, type: 3}
+      spawnPosition: 2
       spawnCount: 0
     spawnInterval: 2
     waitForNextWave: 2
