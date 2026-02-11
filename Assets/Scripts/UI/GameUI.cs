@@ -1,4 +1,4 @@
- using TMPro;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +8,13 @@ namespace UI
     {
         [SerializeField] private TMP_Text resourceText, versionText, healthText, speedText;
         private GameObject loseScreen, winScreen;
+        [HideInInspector] public GameObject joystick;
+
+        private void Awake()
+        {
+            joystick = transform.Find("JoyStick").gameObject;
+            joystick.SetActive(false);
+        }
         private void Start()
         {
             winScreen = transform.Find("Victory Screen").gameObject;
@@ -46,7 +53,14 @@ namespace UI
 
         public void ResetProgress()
         {
+            SaveData oldData = JsonSave.LoadData();
             JsonSave.DeleteSave();
+            SaveData newData = JsonSave.LoadData();
+            
+            newData.evolutionPoints = oldData.evolutionPoints;
+            newData.evolutions = oldData.evolutions;
+            
+            JsonSave.Save(newData);
             ReturnToMenu();
         }
 

@@ -62,9 +62,9 @@ namespace Towers
             
             base.Upgrade();
 
-            gun = transform.Find($"{stats.model[level].name}/Body/Gun");
+            gun = transform.Find($"{stats.model[Mathf.Min(level, stats.model.Length)].name}/Body/Gun");
             currentBarrel = 0;
-            muzzleFlashes = transform.Find(stats.model[level].name).GetComponentsInChildren<ParticleSystem>().ToList();
+            muzzleFlashes = transform.Find(stats.model[Mathf.Min(level, stats.model.Length - 1)].name).GetComponentsInChildren<ParticleSystem>().ToList();
         }
     }
 }

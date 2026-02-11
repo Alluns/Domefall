@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float maxHp;
     public float dmg;
     public int resourcesGranted;
+    public ParticleSystem deathParticles;
 
     [HideInInspector]
     public float distanceToShelter;
@@ -69,6 +70,11 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
+        if (deathParticles != null) 
+        {
+            ParticleSystem deathPs = Instantiate(deathParticles, gameObject.transform.position, Quaternion.identity);
+            deathParticles.Play();
+        }
         SoundManager.Instance.PlaySfx(SoundManager.Sfx.EnemyDie, 2f);
         GameManager.Instance.GetResource(resourcesGranted);
         EnemyManager.Instance.enemiesAlive--;

@@ -58,11 +58,11 @@ namespace Towers
         {
             base.Upgrade();
 
-            turret = transform.Find($"{stats.model[level].name}/Base/Turret");
+            turret = transform.Find($"{stats.model[Mathf.Min(level, stats.model.Length - 1)].name}/Base/Turret");
             breech = turret.transform.Find("Breech");
 
             currentBarrel = 0;
-            muzzleFlashes = transform.Find(stats.model[level].name).GetComponentsInChildren<ParticleSystem>().ToList();
+            muzzleFlashes = transform.Find(stats.model[Mathf.Min(level, stats.model.Length - 1)].name).GetComponentsInChildren<ParticleSystem>().ToList();
         }
     }
 }

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.EnhancedTouch;
 
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
@@ -25,9 +27,12 @@ public class Bunker : MonoBehaviour, IClickable
     private Transform turret, barrel;
     private readonly List<ParticleSystem> muzzleFlashes = new();
     private int currentBarrel = 0;
-    //private GameObject Highlight;
     private GameObject AimIndicator;
     private LineRenderer lineRenderer;
+    private GameObject joystick;
+    private Vector3 stickPos;
+    private Ray ray;
+    private bool joyStickActive;
 
     public void Clicked() { }
 
@@ -48,9 +53,9 @@ public class Bunker : MonoBehaviour, IClickable
     }
     private void Start()
     {
+        joystick = GameObject.Find("HUD").GetComponent<GameUI>().joystick;
         turret = transform.Find("Bunker/Body/Cylinder/Gunbody");
         barrel = turret.transform.Find("Gunbarrel");
-        //Highlight = GameObject.Find("Highlight");
         muzzleFlashes.AddRange(gameObject.GetComponentsInChildren<ParticleSystem>());
         attackCooldown = 1 / attackSpeed;
         currentHp = maxHp;
@@ -62,34 +67,48 @@ public class Bunker : MonoBehaviour, IClickable
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.startColor = new Color (1, 0, 0, 0.7f);
-        lineRenderer.endColor = new Color(1, 0, 0, 0.7f);
+        lineRenderer.startColor = Color.red;
+        lineRenderer.endColor = Color.red;
 
-        //Highlight.SetActive(false);
     }
     private void Update()
     {
         if (Touch.activeTouches.Count > 0 && GameManager.Instance.currentState == GameManager.GameState.Playing)
         {
-            lineRenderer.SetPosition(0, muzzleFlashes[0].transform.position);
-            lineRenderer.SetPosition(1, new Vector3(transform.position.x + turret.transform.forward.x * range, muzzleFlashes[0].transform.position.y, transform.position.z + turret.transform.forward.z * range));
             Touch touch = Touch.activeTouches[0];
-            Vector2 direction2D = (touch.screenPosition - touch.startScreenPosition);
-            if (direction2D.magnitude > 75)
+            if (!joyStickActive && !CheckForUI() && !CheckForClickable())
             {
-                direction2D = direction2D.normalized;
-                aimDirection = new Vector3(direction2D.x, 0, direction2D.y);
+                EnableJoyStick();
             }
-            if (attackCooldown <= 0)
+
+            if (joyStickActive)
             {
-                ShootInDirection(aimDirection);
-                rayDir = aimDirection;
+                lineRenderer.SetPosition(0, muzzleFlashes[0].transform.position);
+                lineRenderer.SetPosition(1, new Vector3(transform.position.x + turret.transform.forward.x * range, muzzleFlashes[0].transform.position.y, transform.position.z + turret.transform.forward.z * range));
+                Vector2 direction2D = (touch.screenPosition - touch.startScreenPosition);
+
+                stickPos = (Vector3)(direction2D);
+                stickPos = Vector3.ClampMagnitude(stickPos, 100);
+                joystick.transform.Find("Stick").transform.localPosition = stickPos;
+
+                if (direction2D.magnitude > 25)
+                {
+                    direction2D = direction2D.normalized;
+                    aimDirection = new Vector3(direction2D.x, 0, direction2D.y);
+                }
+
+                if (attackCooldown <= 0)
+                {
+                    ShootInDirection(aimDirection);
+                    rayDir = aimDirection;
+                }
             }
         }
         else
         {
             lineRenderer.SetPosition(0, Vector3.zero);
             lineRenderer.SetPosition(1, Vector3.zero);
+            DisableJoyStick();
         }
         RotateInDirection(aimDirection);
         attackCooldown -= Time.deltaTime;
@@ -114,7 +133,7 @@ public class Bunker : MonoBehaviour, IClickable
         if (direction != Vector3.zero)
         {
             Quaternion targetRot = Quaternion.LookRotation(direction);
-            turret.rotation = Quaternion.Slerp(turret.rotation, targetRot, Time.deltaTime * 100);
+            turret.rotation = Quaternion.Slerp(turret.rotation, targetRot, Time.deltaTime * 5);
         }
     }
 
@@ -125,10 +144,57 @@ public class Bunker : MonoBehaviour, IClickable
         if (currentHp <= 0) GameManager.Instance.SwitchState(GameManager.GameState.Lose);
     }
 
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.yellow;
-    //    Gizmos.DrawRay(transform.position, rayDir * 100); 
-    //}
-   
+    private bool CheckForUI()
+    {
+        Touch touch = Touch.activeTouches[0];
+
+        PointerEventData pointerEventData = new(EventSystem.current)
+        {
+            position = touch.screenPosition
+        };
+
+        List<RaycastResult> results = new();
+
+        EventSystem.current.RaycastAll(pointerEventData, results);
+
+        if (results.Count > 0)
+        {
+            foreach (RaycastResult result in results)
+            {
+                if (result.gameObject.name == "JoyStick")
+                {
+                    return false;
+                }
+                else return true;
+            }
+        }
+        return false;
+    }
+
+    private bool CheckForClickable()
+    {
+        Vector2 pressedPixel = Touch.activeTouches[0].startScreenPosition;
+
+        ray = Camera.main.ScreenPointToRay(pressedPixel);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            if (hit.collider.gameObject.GetComponent<IClickable>() != null) return true;
+        }
+        return false;
+    }
+
+    private void EnableJoyStick()
+    {
+        joystick.transform.position = Touch.activeTouches[0].startScreenPosition;
+        joystick.SetActive(true);
+        joyStickActive = true;
+    }
+
+    private void DisableJoyStick()
+    {
+        stickPos = Vector3.zero;
+        joystick.transform.Find("Stick").transform.localPosition = stickPos;
+        joystick.SetActive(false);
+        joyStickActive=false;
+    }
 }
