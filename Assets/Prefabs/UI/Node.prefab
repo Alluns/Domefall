@@ -122,8 +122,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7844694957446024316}
-        m_TargetAssemblyTypeName: Jumpa, Assembly-CSharp
-        m_MethodName: OnUpgrade
+        m_TargetAssemblyTypeName: EvolutionNode, Assembly-CSharp
+        m_MethodName: SelectEvolution
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -145,12 +145,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88bbbeeb5bd15f41b8938ca62706fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Jumpa
+  isStartNode: 0
   description: Placeholder description
   type: 0
   attributes: []
   owned: {fileID: 21300000, guid: 46da6c2ef358f6c43810bc1f0a1c67d2, type: 3}
   available: {fileID: 21300000, guid: 1d2cf203faf918d44b25ef6fd5233fab, type: 3}
   locked: {fileID: 21300000, guid: 548e0c9657c8bcf4ea4a104dc810387d, type: 3}
-  parent: {fileID: 0}
   children: []
   conflicts: []

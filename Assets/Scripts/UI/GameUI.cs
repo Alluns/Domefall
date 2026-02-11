@@ -6,7 +6,7 @@ namespace UI
 {
     public class GameUI : MonoBehaviour
     {
-        [SerializeField] private TMP_Text resourceText, versionText, healthText, speedText;
+        [SerializeField] private TMP_Text resourceText, healthText, speedText;
         private GameObject loseScreen, winScreen;
         [HideInInspector] public GameObject joystick;
 
@@ -21,8 +21,6 @@ namespace UI
             winScreen.gameObject.SetActive(false);
             loseScreen = transform.Find("Game Over Screen").gameObject;
             loseScreen.gameObject.SetActive(false);
-
-            versionText.text = $"Project {Application.productName} version: {Application.version}";
         
             GameManager.Instance.onGameStateChanged += OnGameStateChanged;
         }
