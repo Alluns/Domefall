@@ -124,6 +124,7 @@ public class EnemyManager : MonoBehaviour
                         enemyMeshAgent.path = spawn.path;
                         enemyMeshAgent.autoRepath = false;
                     }
+                    break;
                 }
             }
         }
