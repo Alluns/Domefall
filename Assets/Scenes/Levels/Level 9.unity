@@ -281,7 +281,7 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
       spawnPosition: 2
       spawnCount: 0
-    spawnInterval: 0
+    spawnInterval: 2
     waitForNextWave: 2
     spawnCount: 0
     spawnQuota: 0
@@ -1482,7 +1482,6 @@ MonoBehaviour:
   maxHp: 10
   currentHp: 0
   currentResources: 150
-  evolutionPoints: 0
   bunker: {fileID: 0}
   gameSpeed: 1
 --- !u!1001 &1152501121
