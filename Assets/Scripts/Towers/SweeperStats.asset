@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee7dbb2d7a1cc246bfafeeb8ff33792, type: 3}
   m_Name: SweeperStats
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.TowerStats
-  health: 200
+  health: 1500
   regeneration: 7.5
-  armor: 40
-  damage: 40
+  armor: 500
+  damage: 300
   criticalHitDamageMultiplier: 2
   criticalHitChance: 0
   attackSpeed: 1
@@ -32,7 +32,7 @@ MonoBehaviour:
   extraProjectiles: 0
   additionalProjectile: 0
   resourcesMultiplier: 1
-  upgradeCost: 25
+  upgradeCost: 450
   upgradeCostScaling: 1.5
   upgradePool:
   - {fileID: 11400000, guid: efe5bc1e982b111488d22578982ca6b4, type: 2}
