@@ -292,7 +292,7 @@ MonoBehaviour:
       spawnPosition: 0
       spawnCount: 0
     spawnInterval: 2
-    waitForNextWave: 0
+    waitForNextWave: 6
     spawnCount: 0
     spawnQuota: 0
   - enemyGroups:
