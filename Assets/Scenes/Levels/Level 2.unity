@@ -1813,7 +1813,6 @@ MonoBehaviour:
   maxHp: 10
   currentHp: 0
   currentResources: 150
-  evolutionPoints: 0
   bunker: {fileID: 0}
   gameSpeed: 1
 --- !u!1001 &1257073721

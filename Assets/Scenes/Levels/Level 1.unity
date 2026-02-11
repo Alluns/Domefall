@@ -759,7 +759,6 @@ MonoBehaviour:
   maxHp: 10
   currentHp: 0
   currentResources: 50
-  evolutionPoints: 0
   bunker: {fileID: 0}
   gameSpeed: 1
 --- !u!1 &1309283613
@@ -1084,6 +1083,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1083293316}
     m_Modifications:
+    - target: {fileID: 90783548138591493, guid: c511575a199df3740bc9fcfc80bfea49, type: 3}
+      propertyPath: maxHp
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4661161673641185148, guid: c511575a199df3740bc9fcfc80bfea49, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
