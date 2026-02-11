@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour
     {
         if (deathParticles != null) 
         {
-            GameObject deathPs = Instantiate(deathParticles, gameObject.transform.position, Quaternion.identity);
+            GameObject deathPs = Instantiate(deathParticles, gameObject.transform.position, gameObject.transform.rotation);
             //deathParticles.Play();
         }
         SoundManager.Instance.PlaySfx(SoundManager.Sfx.EnemyDie, 2f);
