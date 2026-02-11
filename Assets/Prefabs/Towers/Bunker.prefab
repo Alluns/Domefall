@@ -5516,9 +5516,9 @@ MonoBehaviour:
     m_Bits: 384
   evoPoints: 0
   range: 50
-  attackSpeed: 0.75
+  attackSpeed: 1
   armour: 500
-  maxHp: 2500
+  maxHp: 10
   currentHp: 0
 --- !u!1 &6216881267025356990
 GameObject:
