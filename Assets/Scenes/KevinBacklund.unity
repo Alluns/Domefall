@@ -207,6 +207,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1478404922}
     m_Modifications:
     - target: {fileID: 90783548138591493, guid: c511575a199df3740bc9fcfc80bfea49, type: 3}
+      propertyPath: maxHp
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 90783548138591493, guid: c511575a199df3740bc9fcfc80bfea49, type: 3}
       propertyPath: range
       value: 40
       objectReference: {fileID: 0}
@@ -517,7 +521,6 @@ MonoBehaviour:
   maxHp: 10
   currentHp: 0
   currentResources: 9999
-  evolutionPoints: 0
   bunker: {fileID: 0}
   gameSpeed: 1
 --- !u!4 &780038387
@@ -664,6 +667,7 @@ MonoBehaviour:
       spawnCount: 0
     spawnInterval: 2
     waitForNextWave: 8
+    delayBetweenGroups: 0
     spawnCount: 0
     spawnQuota: 0
   - enemyGroups:
@@ -687,6 +691,7 @@ MonoBehaviour:
       spawnCount: 0
     spawnInterval: 3
     waitForNextWave: 0
+    delayBetweenGroups: 0
     spawnCount: 0
     spawnQuota: 0
   enemiesAlive: 0

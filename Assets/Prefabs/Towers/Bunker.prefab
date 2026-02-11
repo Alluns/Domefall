@@ -5510,15 +5510,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e3e3c1bbe3e664aa5581c3aca64325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  dmg: 20
+  dmg: 1000
   mask:
     serializedVersion: 2
     m_Bits: 384
   evoPoints: 0
   range: 50
-  attackSpeed: 15
-  armour: 200
-  maxHp: 10
+  attackSpeed: 0.75
+  armour: 500
+  maxHp: 2500
   currentHp: 0
 --- !u!1 &6216881267025356990
 GameObject:

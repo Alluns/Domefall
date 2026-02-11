@@ -45,7 +45,7 @@ namespace Towers
             base.Upgrade();
 
             currentBarrel = 0;
-            muzzleFlashes = transform.Find(stats.model[level].name).GetComponentsInChildren<ParticleSystem>().ToList();
+            muzzleFlashes = transform.Find(stats.model[Mathf.Min(level, stats.model.Length - 1)].name).GetComponentsInChildren<ParticleSystem>().ToList();
         }
     }
 }

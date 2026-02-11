@@ -68,8 +68,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Towers.SweeperTower
   towerStats: {fileID: 11400000, guid: 9b3fee9faf13e44489e08e01ef8c9e52, type: 2}
+  towerType: 4
   displayRange: 0
-  displayAim: 0
+  displayTarget: 0
 --- !u!1001 &9191161330477243842
 PrefabInstance:
   m_ObjectHideFlags: 0

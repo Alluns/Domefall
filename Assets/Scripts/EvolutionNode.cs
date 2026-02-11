@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using ScriptableObjects;
 using UnityEngine.UI;
+using System.Linq;
 using UnityEngine;
 using System;
-using System.Linq;
 
 public class EvolutionNode : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class EvolutionNode : MonoBehaviour
     [Header("Upgrades")]
     [SerializeField] private string description;
     [SerializeField] private EvolutionType type;
-    [SerializeField] private List<EvolutionAttribute> attributes;
+    [SerializeField] private List<UpgradeAttribute> attributes;
 
     [Header("Sprites")]
     [SerializeField] private Sprite owned;
@@ -23,6 +23,7 @@ public class EvolutionNode : MonoBehaviour
     public List<EvolutionNode> children = new();
     public List<EvolutionNode> conflicts = new();
 
+    private NodeState state;
     private NodeState State
     {
         get => state;
@@ -32,9 +33,7 @@ public class EvolutionNode : MonoBehaviour
             UpdateSprite();
         }
     }
-
-    private NodeState state;
-
+    
     private void Awake()
     {
         State = NodeState.Unassigned;
@@ -64,7 +63,7 @@ public class EvolutionNode : MonoBehaviour
 
     private NodeState CalculateState(SaveData saveData, EvolutionNode parent)
     {
-        if (saveData.evolutions.Exists(e => e.name == name)) return NodeState.Owned;
+        if (saveData.evolutions.Exists(e => e.name == name && e.type == type)) return NodeState.Owned;
         
         if (conflicts.Any(conflict => conflict.State == NodeState.Owned))
         {
@@ -132,7 +131,7 @@ public class EvolutionNode : MonoBehaviour
     {
         public string name;
         public EvolutionType type;
-        public List<EvolutionAttribute> attributes;
+        public List<UpgradeAttribute> attributes;
     }
     
     public enum EvolutionType
@@ -143,13 +142,6 @@ public class EvolutionNode : MonoBehaviour
         Air,
         AirAndGround,
         Economy
-    }
-
-    [Serializable] public class EvolutionAttribute
-    {
-        public UpgradeType upgradeType;
-        public float additive;
-        public float multiplicative = 1;
     }
     
 #if UNITY_EDITOR

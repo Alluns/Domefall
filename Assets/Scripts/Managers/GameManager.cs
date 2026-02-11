@@ -1,7 +1,7 @@
-using System;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,15 +22,15 @@ public class GameManager : MonoBehaviour
     public float maxHp;
     [HideInInspector] public float currentHp;
     public int currentResources;
-    [HideInInspector] public int evolutionPoints;
     [HideInInspector] public Bunker bunker;
     public float gameSpeed = 1.0f;
     private readonly List<float> gameSpeeds = new (){ 1.0f, 2f, 3.0f };
+    
     private void Awake()
     {
         if(Instance != null && Instance != this)
         {
-            throw new System.Exception("2 singleton of the same [GamesManager exist]");
+            throw new Exception("2 singleton of the same [GamesManager exist]");
         }
         Instance = this;
         saveData = JsonSave.LoadData();
@@ -59,7 +59,6 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Win:
                 Time.timeScale = 0f;
-                evolutionPoints++;
                 break;
             case GameState.Menu:
                 Time.timeScale = 0f;
@@ -73,15 +72,25 @@ public class GameManager : MonoBehaviour
     {
         SwitchState((GameState)iState);
     }
+    
     public void SwitchState(GameState aState)
     {
         currentState = aState;
         onGameStateChanged?.Invoke(currentState);
+        
+        if (aState == GameState.Win)
+        {
+            saveData.evolutionPoints++;
+            JsonSave.Save(saveData);
+        }
+        
     }
+    
     public void GetResource(int resource)
     {
         currentResources += resource;
     }
+    
     public void TogglePause()
     {
         switch (currentState)

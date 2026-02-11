@@ -68,8 +68,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Towers.MachineGunTower
   towerStats: {fileID: 11400000, guid: 9bd2383c5c9d5bb4e859c3eb0d9b90d1, type: 2}
+  towerType: 1
   displayRange: 0
-  displayAim: 0
+  displayTarget: 0
 --- !u!1001 &5967329811282923078
 PrefabInstance:
   m_ObjectHideFlags: 0

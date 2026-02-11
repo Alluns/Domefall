@@ -60,11 +60,11 @@ namespace Towers
         {
             base.Upgrade();
             
-            body = transform.Find($"{stats.model[level].name}/Base/Body");
-            barrel = transform.Find($"{stats.model[level].name}/Base/Body/Barrel");
+            body = transform.Find($"{stats.model[Mathf.Min(level, stats.model.Length - 1)].name}/Base/Body");
+            barrel = transform.Find($"{stats.model[Mathf.Min(level, stats.model.Length - 1)].name}/Base/Body/Barrel");
 
             currentBarrel = 0;
-            muzzleFlashes = transform.Find(stats.model[level].name).GetComponentsInChildren<ParticleSystem>().ToList();
+            muzzleFlashes = transform.Find(stats.model[Mathf.Min(level, stats.model.Length - 1)].name).GetComponentsInChildren<ParticleSystem>().ToList();
         }
 
         private IEnumerator TrailAnimation(TrailRenderer trail, Vector3 target)
