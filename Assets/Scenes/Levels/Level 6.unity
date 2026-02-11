@@ -172,14 +172,14 @@ MonoBehaviour:
     groups: []
   waves:
   - enemyGroups:
-    - minEnemyCount: 5
-      maxEnemyCount: 6
+    - minEnemyCount: 8
+      maxEnemyCount: 9
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
       spawnPosition: 0
       spawnCount: 0
-    - minEnemyCount: 5
-      maxEnemyCount: 6
+    - minEnemyCount: 2
+      maxEnemyCount: 3
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
       spawnPosition: 1
@@ -190,20 +190,20 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
       spawnPosition: 2
       spawnCount: 0
-    - minEnemyCount: 0
-      maxEnemyCount: 0
+    - minEnemyCount: 10
+      maxEnemyCount: 12
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 66ecf153248b8e14e81f3034e0be04aa, type: 3}
       spawnPosition: 0
       spawnCount: 0
-    - minEnemyCount: 5
-      maxEnemyCount: 6
+    - minEnemyCount: 0
+      maxEnemyCount: 0
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 66ecf153248b8e14e81f3034e0be04aa, type: 3}
       spawnPosition: 1
       spawnCount: 0
-    - minEnemyCount: 5
-      maxEnemyCount: 6
+    - minEnemyCount: 0
+      maxEnemyCount: 0
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 66ecf153248b8e14e81f3034e0be04aa, type: 3}
       spawnPosition: 2
@@ -1363,7 +1363,6 @@ MonoBehaviour:
   maxHp: 10
   currentHp: 0
   currentResources: 150
-  evolutionPoints: 0
   bunker: {fileID: 0}
   gameSpeed: 1
 --- !u!1001 &1152676203
