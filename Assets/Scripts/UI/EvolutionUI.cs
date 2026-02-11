@@ -7,6 +7,7 @@ public class EvolutionUI : MonoBehaviour
     [SerializeField] private List<GameObject> trees = new();
     [SerializeField] private int activeTree;
     [SerializeField] private TMP_Text evolutionPointText;
+    [SerializeField] private EvolutionConfirmationUI confirmationUI;
 
     private int evolutionPoints;
 

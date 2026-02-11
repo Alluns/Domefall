@@ -75,13 +75,24 @@ public class EvolutionNode : MonoBehaviour
         return NodeState.Locked;
     }
 
-    public void OnUpgrade()
+    public void SelectEvolution()
     {
         if (state != NodeState.Available) return;
         
         SaveData saveData = JsonSave.LoadData();
         
         if (saveData.evolutionPoints <= 0) return;
+
+        EvolutionConfirmationUI.Instance.gameObject.SetActive(true);
+        
+        EvolutionConfirmationUI.Instance.node = this;
+        EvolutionConfirmationUI.Instance.Title = name;
+        EvolutionConfirmationUI.Instance.Description = description;
+    }
+    
+    public void BuyEvolution()
+    {
+        SaveData saveData = JsonSave.LoadData();
 
         saveData.evolutionPoints--;
         State = NodeState.Owned;
@@ -99,6 +110,7 @@ public class EvolutionNode : MonoBehaviour
         Evolution evolution = new()
         {
             name = name,
+            description = description,
             type = type,
             attributes = attributes
         };
@@ -130,6 +142,7 @@ public class EvolutionNode : MonoBehaviour
     [Serializable] public struct Evolution
     {
         public string name;
+        public string description;
         public EvolutionType type;
         public List<UpgradeAttribute> attributes;
     }

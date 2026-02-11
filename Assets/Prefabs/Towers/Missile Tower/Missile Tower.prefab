@@ -71,6 +71,8 @@ MonoBehaviour:
   towerType: 3
   displayRange: 0
   displayTarget: 0
+  trail: {fileID: 6992441530752600166, guid: 3b898342479683e4698ed326273be4be, type: 3}
+  bulletSpeed: 100
 --- !u!1001 &4836929187632825992
 PrefabInstance:
   m_ObjectHideFlags: 0

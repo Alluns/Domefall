@@ -1,8 +1,10 @@
 using UnityEngine;
+using TMPro;
 
 public class MainMenuUI : MonoBehaviour
 {
-    [SerializeField] private GameObject levelMenu, optionsMenu, evolutionMenu; 
+    [SerializeField] private GameObject levelMenu, optionsMenu, evolutionMenu;
+    [SerializeField] private TMP_Text versionText;
     
     private void OnEnable()
     {
@@ -12,9 +14,11 @@ public class MainMenuUI : MonoBehaviour
         {
             evolutionMenu.SetActive(true);
         }
+        
+        versionText.text = $"Version: {Application.version}";
     }
 
-    private void SwitchToLevelSelect()
+    public void SwitchToLevelSelect()
     {
         evolutionMenu.SetActive(false);
         optionsMenu.SetActive(false);

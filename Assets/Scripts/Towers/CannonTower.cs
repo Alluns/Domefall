@@ -7,10 +7,10 @@ namespace Towers
 {
     public class GroundTower : Tower
     {
-        public TrailRenderer trail;
+        public GameObject trail;
         private List<ParticleSystem> muzzleFlashes = new();
         private int currentBarrel;
-
+        public int bulletSpeed;
         private Transform body, barrel; 
         private void Start()
         {
@@ -45,8 +45,10 @@ namespace Towers
                 targetEnemy = null;
                 return false;
             }
-
-            //StartCoroutine(TrailAnimation(Instantiate(trail, muzzleFlashes[0].transform.position, Quaternion.identity), targetEnemy.transform.position));
+            if (trail != null)
+            {
+                StartCoroutine(TrailAnimation(Instantiate(trail, muzzleFlashes[0].transform.position, Quaternion.identity), targetEnemy.transform.position));
+            }
             muzzleFlashes[currentBarrel].Play();
             SoundManager.Instance.PlaySfx(SoundManager.Sfx.GroundTower, 1.8f);
             currentBarrel = (currentBarrel + 1) % muzzleFlashes.Count;
@@ -67,10 +69,9 @@ namespace Towers
             muzzleFlashes = transform.Find(stats.model[Mathf.Min(level, stats.model.Length - 1)].name).GetComponentsInChildren<ParticleSystem>().ToList();
         }
 
-        private IEnumerator TrailAnimation(TrailRenderer trail, Vector3 target)
+        private IEnumerator TrailAnimation(GameObject trail, Vector3 target)
         {
             Vector3 startPos = trail.transform.position;
-            int bulletSpeed = 300;
             float distance = Vector3.Distance(startPos, target);
             float remainingDistance = distance;
             while (remainingDistance > 0)
@@ -80,7 +81,7 @@ namespace Towers
                 yield return null;
             }
             trail.transform.position = target;
-            Destroy(trail.gameObject, trail.time);
+            //Destroy(trail.gameObject, trail.GetComponent<TrailRenderer>().time);
         }
     }
 }
