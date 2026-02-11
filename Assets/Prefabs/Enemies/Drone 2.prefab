@@ -422,8 +422,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   moveSpeed: 6
   maxHp: 2000
-  dmg: 200
+  dmg: 1
   resourcesGranted: 2
+  deathParticles: {fileID: 0}
   distanceToShelter: 10
 --- !u!1 &6417270154919927522
 GameObject:
