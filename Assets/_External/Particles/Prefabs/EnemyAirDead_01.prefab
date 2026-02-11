@@ -19309,7 +19309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6768864750198526968, guid: 6fad91cdf5a4a8449be86f4485ecdd18, type: 3}
       propertyPath: m_RenderMode
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6768864750198526968, guid: 6fad91cdf5a4a8449be86f4485ecdd18, type: 3}
       propertyPath: m_MaxParticleSize

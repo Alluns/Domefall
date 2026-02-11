@@ -9636,7 +9636,7 @@ Transform:
   m_GameObject: {fileID: 6278116303982511264}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -9654,7 +9654,7 @@ ParticleSystem:
   m_GameObject: {fileID: 6278116303982511264}
   serializedVersion: 8
   lengthInSec: 4
-  simulationSpeed: 2
+  simulationSpeed: 1
   stopAction: 2
   cullingMode: 3
   ringBufferMode: 0
@@ -14383,7 +14383,7 @@ Transform:
   m_GameObject: {fileID: 6951849598414561108}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14968,7 +14968,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -19309,7 +19309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6768864750198526968, guid: 6fad91cdf5a4a8449be86f4485ecdd18, type: 3}
       propertyPath: m_RenderMode
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6768864750198526968, guid: 6fad91cdf5a4a8449be86f4485ecdd18, type: 3}
       propertyPath: m_MaxParticleSize
@@ -19349,7 +19349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8175601730682129087, guid: 6fad91cdf5a4a8449be86f4485ecdd18, type: 3}
       propertyPath: EmissionModule.rateOverDistance.scalar
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8175601730682129087, guid: 6fad91cdf5a4a8449be86f4485ecdd18, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
