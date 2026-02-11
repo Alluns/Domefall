@@ -423,8 +423,8 @@ MonoBehaviour:
   moveSpeed: 6
   maxHp: 2000
   dmg: 1
-  resourcesGranted: 2
-  deathParticles: {fileID: 0}
+  resourcesGranted: 20
+  deathParticles: {fileID: 6278116303982511264, guid: 1e5231078af4ca0458d6f10a3596b3c0, type: 3}
   distanceToShelter: 10
 --- !u!1 &6417270154919927522
 GameObject:
