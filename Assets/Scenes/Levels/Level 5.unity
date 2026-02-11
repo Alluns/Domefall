@@ -247,8 +247,8 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4120674367502412302, guid: 0d12d14f0d2fd2740b5a5c7b090a058b, type: 3}
       spawnPosition: 1
       spawnCount: 0
-    spawnInterval: 0
-    waitForNextWave: 2
+    spawnInterval: 3
+    waitForNextWave: 6
     spawnCount: 0
     spawnQuota: 0
   - enemyGroups:
@@ -289,7 +289,7 @@ MonoBehaviour:
       spawnPosition: 1
       spawnCount: 0
     spawnInterval: 3
-    waitForNextWave: 8
+    waitForNextWave: 6
     spawnCount: 0
     spawnQuota: 0
   - enemyGroups:
@@ -341,8 +341,8 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4120674367502412302, guid: 95722787dd9363e4295c44723327ce22, type: 3}
       spawnPosition: 1
       spawnCount: 0
-    spawnInterval: 2
-    waitForNextWave: 2
+    spawnInterval: 3
+    waitForNextWave: 6
     spawnCount: 0
     spawnQuota: 0
   enemiesAlive: 0
@@ -1400,7 +1400,6 @@ MonoBehaviour:
   maxHp: 10
   currentHp: 0
   currentResources: 150
-  evolutionPoints: 0
   bunker: {fileID: 0}
   gameSpeed: 1
 --- !u!1 &1309283613
