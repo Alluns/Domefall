@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using ScriptableObjects;
 using UnityEngine.UI;
+using System.Linq;
 using UnityEngine;
 using System;
-using System.Linq;
 
 public class EvolutionNode : MonoBehaviour
 {
@@ -63,7 +63,7 @@ public class EvolutionNode : MonoBehaviour
 
     private NodeState CalculateState(SaveData saveData, EvolutionNode parent)
     {
-        if (saveData.evolutions.Exists(e => e.name == name)) return NodeState.Owned;
+        if (saveData.evolutions.Exists(e => e.name == name && e.type == type)) return NodeState.Owned;
         
         if (conflicts.Any(conflict => conflict.State == NodeState.Owned))
         {

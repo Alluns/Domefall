@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GamesManager
   currentState: 0
-  maxHp: 10
+  maxHp: 1000
   currentHp: 0
   currentResources: 9999
   evolutionPoints: 0
