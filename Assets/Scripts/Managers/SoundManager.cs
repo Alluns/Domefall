@@ -27,7 +27,8 @@ public class SoundManager : MonoBehaviour
     public enum Bgm
     {
         BlackSea,
-        Redalalert5,
+        RedAlert,
+        BlackAlert,
         none
     }
 
