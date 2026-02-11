@@ -281,7 +281,7 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4120674367502412302, guid: 2b24ff8b91ca3554290fe97fd73d0213, type: 3}
       spawnPosition: 2
       spawnCount: 0
-    spawnInterval: 2
+    spawnInterval: 0
     waitForNextWave: 2
     spawnCount: 0
     spawnQuota: 0
@@ -545,6 +545,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 14317f65095e70a4fb1f67a263922573, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: edb7caa2b20312b4e8a8599766cdc9a2, type: 2}
     - target: {fileID: 919132149155446097, guid: 14317f65095e70a4fb1f67a263922573, type: 3}
       propertyPath: m_Name
       value: Barrel_Cluster_3 (1)
@@ -782,6 +786,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0db694ac5224dbe4da7955661bd63ff3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e83ef37a99066f45af2f26dede5624a, type: 2}
     - target: {fileID: 919132149155446097, guid: 0db694ac5224dbe4da7955661bd63ff3, type: 3}
       propertyPath: m_Name
       value: Rock1 (1)
@@ -1238,6 +1246,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 14317f65095e70a4fb1f67a263922573, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: edb7caa2b20312b4e8a8599766cdc9a2, type: 2}
     - target: {fileID: 919132149155446097, guid: 14317f65095e70a4fb1f67a263922573, type: 3}
       propertyPath: m_Name
       value: Barrel_Cluster_3
@@ -1295,6 +1307,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0fd2df9604f24de4d812e6aaf1b149ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e83ef37a99066f45af2f26dede5624a, type: 2}
     - target: {fileID: 919132149155446097, guid: 0fd2df9604f24de4d812e6aaf1b149ec, type: 3}
       propertyPath: m_Name
       value: Rock2
@@ -1513,9 +1529,8 @@ MonoBehaviour:
   currentState: 0
   maxHp: 10
   currentHp: 0
-  currentResources: 450
+  currentResources: 150
   bunker: {fileID: 0}
-  gameSpeed: 1
 --- !u!1001 &1152501121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1722,6 +1737,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 723533590614055013, guid: ef04bc657d6e72d4e9b7737ad418854d, type: 3}
+      propertyPath: music
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1312267691309200973, guid: ef04bc657d6e72d4e9b7737ad418854d, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -1835,6 +1854,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0db694ac5224dbe4da7955661bd63ff3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e83ef37a99066f45af2f26dede5624a, type: 2}
     - target: {fileID: 919132149155446097, guid: 0db694ac5224dbe4da7955661bd63ff3, type: 3}
       propertyPath: m_Name
       value: Rock1
@@ -2273,6 +2296,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 95cf0fa0a2f3b494480a3160b8e8ebf0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: edb7caa2b20312b4e8a8599766cdc9a2, type: 2}
     - target: {fileID: 919132149155446097, guid: 95cf0fa0a2f3b494480a3160b8e8ebf0, type: 3}
       propertyPath: m_Name
       value: Barrel_Cluster_2
@@ -2330,6 +2357,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 58a0b2826888ee14497ca6c154337652, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a57e06038375c434cb6a5f82cbe11dd9, type: 2}
     - target: {fileID: 919132149155446097, guid: 58a0b2826888ee14497ca6c154337652, type: 3}
       propertyPath: m_Name
       value: Tree_2 (1)
@@ -2387,6 +2418,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 58a0b2826888ee14497ca6c154337652, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a57e06038375c434cb6a5f82cbe11dd9, type: 2}
     - target: {fileID: 919132149155446097, guid: 58a0b2826888ee14497ca6c154337652, type: 3}
       propertyPath: m_Name
       value: Tree_2

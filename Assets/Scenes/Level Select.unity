@@ -1464,7 +1464,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 723533590614055013, guid: ef04bc657d6e72d4e9b7737ad418854d, type: 3}
       propertyPath: music
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1312267691309200973, guid: ef04bc657d6e72d4e9b7737ad418854d, type: 3}
       propertyPath: m_Name

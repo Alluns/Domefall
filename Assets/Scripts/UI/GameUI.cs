@@ -21,6 +21,8 @@ namespace UI
             winScreen.gameObject.SetActive(false);
             loseScreen = transform.Find("Game Over Screen").gameObject;
             loseScreen.gameObject.SetActive(false);
+            
+            speedText.text = $"{Mathf.FloorToInt(GameManager.Instance.GameSpeed)}x";
         
             GameManager.Instance.onGameStateChanged += OnGameStateChanged;
         }
@@ -65,7 +67,7 @@ namespace UI
         public void ChangeSpeed()
         {
             GameManager.Instance.ChangeSpeed();
-            speedText.text = $"{Mathf.FloorToInt(GameManager.Instance.gameSpeed)}x";
+            speedText.text = $"{Mathf.FloorToInt(GameManager.Instance.GameSpeed)}x";
         }
 
         public void PauseGame()

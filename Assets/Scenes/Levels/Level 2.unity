@@ -244,7 +244,7 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4120674367502412302, guid: 0d12d14f0d2fd2740b5a5c7b090a058b, type: 3}
       spawnPosition: 0
       spawnCount: 0
-    spawnInterval: 3
+    spawnInterval: 2
     waitForNextWave: 2
     spawnCount: 0
     spawnQuota: 0
@@ -290,19 +290,19 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4120674367502412302, guid: 0d12d14f0d2fd2740b5a5c7b090a058b, type: 3}
       spawnPosition: 1
       spawnCount: 0
-    - minEnemyCount: 7
-      maxEnemyCount: 9
+    - minEnemyCount: 3
+      maxEnemyCount: 4
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 95722787dd9363e4295c44723327ce22, type: 3}
       spawnPosition: 0
       spawnCount: 0
-    - minEnemyCount: 0
-      maxEnemyCount: 0
+    - minEnemyCount: 3
+      maxEnemyCount: 4
       enemyCount: 0
       enemyPrefab: {fileID: 4120674367502412302, guid: 95722787dd9363e4295c44723327ce22, type: 3}
       spawnPosition: 1
       spawnCount: 0
-    spawnInterval: 3
+    spawnInterval: 2
     waitForNextWave: 2
     spawnCount: 0
     spawnQuota: 0
@@ -893,22 +893,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3099417239547925430, guid: 394d3b6ce171d644c971d018b25feb9e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3099417239547925430, guid: 394d3b6ce171d644c971d018b25feb9e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3099417239547925430, guid: 394d3b6ce171d644c971d018b25feb9e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3099417239547925430, guid: 394d3b6ce171d644c971d018b25feb9e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3783718869361933164, guid: 394d3b6ce171d644c971d018b25feb9e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -942,22 +926,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4336662302708391835, guid: 394d3b6ce171d644c971d018b25feb9e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366893844645156428, guid: 394d3b6ce171d644c971d018b25feb9e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366893844645156428, guid: 394d3b6ce171d644c971d018b25feb9e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366893844645156428, guid: 394d3b6ce171d644c971d018b25feb9e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4366893844645156428, guid: 394d3b6ce171d644c971d018b25feb9e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -1860,7 +1828,7 @@ MonoBehaviour:
   currentState: 0
   maxHp: 10
   currentHp: 0
-  currentResources: 100
+  currentResources: 150
   bunker: {fileID: 0}
   gameSpeed: 1
 --- !u!1001 &1257073721

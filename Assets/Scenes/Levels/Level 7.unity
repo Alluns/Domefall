@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 82ce1394276dff6479ae061410f782fd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e83ef37a99066f45af2f26dede5624a, type: 2}
     - target: {fileID: 919132149155446097, guid: 82ce1394276dff6479ae061410f782fd, type: 3}
       propertyPath: m_Name
       value: Rock4 (1)
@@ -267,7 +271,7 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4120674367502412302, guid: 024f4fe312267f444a77b68d0cdfd894, type: 3}
       spawnPosition: 1
       spawnCount: 0
-    spawnInterval: 2
+    spawnInterval: 0
     waitForNextWave: 2
     spawnCount: 0
     spawnQuota: 0
@@ -407,6 +411,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 58a0b2826888ee14497ca6c154337652, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a57e06038375c434cb6a5f82cbe11dd9, type: 2}
     - target: {fileID: 919132149155446097, guid: 58a0b2826888ee14497ca6c154337652, type: 3}
       propertyPath: m_Name
       value: Tree_2 (1)
@@ -464,6 +472,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 58a0b2826888ee14497ca6c154337652, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a57e06038375c434cb6a5f82cbe11dd9, type: 2}
     - target: {fileID: 919132149155446097, guid: 58a0b2826888ee14497ca6c154337652, type: 3}
       propertyPath: m_Name
       value: Tree_2
@@ -905,6 +917,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 82ce1394276dff6479ae061410f782fd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e83ef37a99066f45af2f26dede5624a, type: 2}
     - target: {fileID: 919132149155446097, guid: 82ce1394276dff6479ae061410f782fd, type: 3}
       propertyPath: m_Name
       value: Rock4
@@ -1091,6 +1107,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 95cf0fa0a2f3b494480a3160b8e8ebf0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: edb7caa2b20312b4e8a8599766cdc9a2, type: 2}
     - target: {fileID: 919132149155446097, guid: 95cf0fa0a2f3b494480a3160b8e8ebf0, type: 3}
       propertyPath: m_Name
       value: Barrel_Cluster_2
@@ -1325,6 +1345,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 831f45df0115dea479548e7622107694, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e83ef37a99066f45af2f26dede5624a, type: 2}
     - target: {fileID: 919132149155446097, guid: 831f45df0115dea479548e7622107694, type: 3}
       propertyPath: m_Name
       value: Rock6
@@ -1381,9 +1405,8 @@ MonoBehaviour:
   currentState: 0
   maxHp: 10
   currentHp: 0
-  currentResources: 350
+  currentResources: 150
   bunker: {fileID: 0}
-  gameSpeed: 1
 --- !u!1 &1309283613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,6 +1665,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0fd2df9604f24de4d812e6aaf1b149ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e83ef37a99066f45af2f26dede5624a, type: 2}
     - target: {fileID: 919132149155446097, guid: 0fd2df9604f24de4d812e6aaf1b149ec, type: 3}
       propertyPath: m_Name
       value: Rock2
@@ -1836,6 +1863,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f745d79f774afbb45a73f7fd3f8e64d4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e83ef37a99066f45af2f26dede5624a, type: 2}
     - target: {fileID: 919132149155446097, guid: f745d79f774afbb45a73f7fd3f8e64d4, type: 3}
       propertyPath: m_Name
       value: Rock3
@@ -2267,6 +2298,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 64f761c87a50f374e9788f7b6f4be3f0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a57e06038375c434cb6a5f82cbe11dd9, type: 2}
     - target: {fileID: 919132149155446097, guid: 64f761c87a50f374e9788f7b6f4be3f0, type: 3}
       propertyPath: m_Name
       value: Tree_1

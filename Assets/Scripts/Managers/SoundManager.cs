@@ -29,6 +29,7 @@ public class SoundManager : MonoBehaviour
         BlackSea,
         RedAlert,
         BlackAlert,
+        MainMenu,
         none
     }
 

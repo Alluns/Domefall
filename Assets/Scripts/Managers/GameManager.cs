@@ -23,8 +23,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public float currentHp;
     public int currentResources;
     [HideInInspector] public Bunker bunker;
-    public float gameSpeed = 1.0f;
-    private readonly List<float> gameSpeeds = new (){ 1.0f, 2f, 3.0f };
+    private float gameSpeed = 2.0f;
+    public float GameSpeed => gameSpeed;
+
+    private readonly List<float> gameSpeeds = new (){ 1.0f, 2.0f, 3.0f };
     
     private void Awake()
     {
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
         bunker = GameObject.FindGameObjectWithTag("Shelter").GetComponent<Bunker>();
         currentHp = maxHp;
     }
+    
     private void Update()
     {
         switch (currentState)
@@ -75,6 +78,11 @@ public class GameManager : MonoBehaviour
     
     public void SwitchState(GameState aState)
     {
+        if (aState == GameState.Playing)
+        {
+            Time.timeScale = gameSpeed;
+        }
+        
         currentState = aState;
         onGameStateChanged?.Invoke(currentState);
         
