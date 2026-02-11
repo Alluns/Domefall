@@ -73,7 +73,7 @@ MonoBehaviour:
   maxHp: 4000
   dmg: 1
   resourcesGranted: 40
-  deathParticles: {fileID: 0}
+  deathParticles: {fileID: 1000013462590818, guid: 640099a3e6c09ce4693d63e0a09af488, type: 3}
   distanceToShelter: 10
 --- !u!1 &8047186867369783822
 GameObject:
